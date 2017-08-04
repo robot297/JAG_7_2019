@@ -60,7 +60,28 @@ public class Question_3_Coffee_ShopTest {
     }
     
     // Since the implementation of the code is mostly up to you, it's impossible for me to write any more
-    // detailed tests. Maybe you could write some tests for your methods?
+    // detailed tests. But, you can create your own tests.
+    //
+    // TODO write more tests for your Drink class
+    
+    @Test
+    public void testDrinkClass() throws Exception {
+        
+        // TODO create an example Drink object
+        
+        // TODO set the value of data e.g. name, price, quantity sold, expenses, sales, profit
+        
+        // TODO call your method to get the total expenses for this drink and assert that the correct value is returned
+    
+        // TODO call your method to get the total sales for this drink and assert that the correct value is returned
+    
+        // TODO call your method to get the total profit for this drink and assert that the correct value is returned
+        
+        // TODO add any other checks you think would be appropriate
+        
+    }
+    
+    
     
     
 }

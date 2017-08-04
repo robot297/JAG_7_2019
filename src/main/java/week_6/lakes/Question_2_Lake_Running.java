@@ -22,8 +22,11 @@ import static input.InputUtils.*;
  
  You'll need to save every time entered for each lake.
  
- Create a Lake class to store all of the data for one lake.
- Add methods to this class to do tasks like adding a new time, and identifying the fastest time for a lake.
+ Create a Lake class to store all of the data for one lake. Create it in the same directory as this file.
+ Add methods to this class to :
+  - Adding a new time
+  - Find and return the fastest time for this lake
+  - Return a list of all of the times for that lake
  
  Save all of your Lake objects in a list or HashMap, so your program has a reference to every Lake.
  
@@ -38,6 +41,10 @@ import static input.InputUtils.*;
  Como, 32.11
  
  Your program should be case-insensitive. So "Como" is the same lake as "como" or "COMO".
+ 
+ 
+ You should write a test for your Lake class. In test/java/week_6/lakes/Question_2_Lake_RunningTest.java, finish
+ 
  
  */
 public class Question_2_Lake_Running {
