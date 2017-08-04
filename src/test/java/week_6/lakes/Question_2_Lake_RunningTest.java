@@ -110,7 +110,10 @@ public class Question_2_Lake_RunningTest {
         // TODO call the method to get all of the times, and assert that all of the times that were added, have been stored in the Lake object
         
         // TODO add any other checks you think would be appropriate
-        
+    
+        fail("Create a Lake class, and write tests for your Lake class"); //TODO remove this line once you've written your tests.
+    
+    
     }
     
     

@@ -43,7 +43,7 @@ import static input.InputUtils.*;
  Your program should be case-insensitive. So "Como" is the same lake as "como" or "COMO".
  
  
- You should write a test for your Lake class. In test/java/week_6/lakes/Question_2_Lake_RunningTest.java, finish
+ You should write some tests for your Lake class. In test/java/week_6/lakes/Question_2_Lake_RunningTest.java, finish
  
  
  */

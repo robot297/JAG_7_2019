@@ -37,11 +37,46 @@
 
 ### Problem 2: Lakes
 
-Start with the lakes running program from Lab 4. 
-
-Modify this program to use objects to store the data. What class(es) will you create? Your classes and objects should improve your program's organization, conciseness, clarity and structure.
-
-
+This is the same question from Lab 4, but you'll refactor your code to use Lake objects to store the data.
+ 
+ You are a runner, and you are in training for a race. You'd like to keep track of all of your
+ times for your training runs. You only like to run around lakes. Here's some example data,
+ Cedar, 45.15
+ Cedar, 43.32
+ Harriet, 49.34
+ Harriet, 44.43
+ Harriet, 46.22
+ Como, 32.11
+ Como, 28.14
+ 
+ Write a program that enables you to enter the names of lakes and times, and store all of this
+ data.
+ 
+ You'll need to save every time entered for each lake.
+ 
+ Create a Lake class to store all of the data for one lake. Create it in the same directory as this file.
+ Add methods to this class to :
+  - Adding a new time
+  - Find and return the fastest time for this lake
+  - Return a list of all of the times for that lake
+ 
+ Save all of your Lake objects in a list or HashMap, so your program has a reference to every Lake.
+ 
+ Your program should still work if you started running
+ around another lake too (e.g. Lake of the Isles, or Lake Phalen).
+ 
+ Your program should be able to analyze the data that you have stored, and print your fastest
+ time for each lake you ran around. So, for the data above, your program will display something like
+ 
+ Cedar, 43.32
+ Harriet, 44.43
+ Como, 32.11
+ 
+ Your program should be case-insensitive. So "Como" is the same lake as "como" or "COMO".
+ 
+ 
+ You should write some tests for your Lake class. In test/java/week_6/lakes/Question_2_Lake_RunningTest.java, finish
+ 
 
 
 ### Question 3: Coffee Shop

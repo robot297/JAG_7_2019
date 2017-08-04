@@ -20,8 +20,8 @@ public class FileUtils {
             boolean deleted = file.delete();       // Ignoring delete result
             if (!deleted) {
                 // Delete temp file
-                System.out.println("Tried to delete a temporary file used for testing, but was not able to. "+
-                        "\nPlease delete the file " + filename);
+                System.out.println("Tried to delete a temporary file used for testing, but was not able to. It may have already been deleted so this is probably not an error. "+
+                        "\nIt it's still present, please delete the file " + filename);
                 
             }
         } catch (Exception e) {

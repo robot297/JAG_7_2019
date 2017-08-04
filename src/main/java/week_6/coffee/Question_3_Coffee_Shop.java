@@ -1,8 +1,11 @@
-package week_6;
+package week_6.coffee;
 
 /**
  *
  *
+ This is the same question as week 5, but you'll refactor your program to
+ use Drink objects.
+ 
  Write a program that creates a sales report for a coffee shop.
  The coffee shop will use this at the end of every day to calculate sales, expenses, and profit.
  
@@ -31,8 +34,14 @@ package week_6;
  The coffee shop sold 100 cappuccino drinks.
  
  
+ 
+ 
  Your program should read this data from coffee_price_data.txt, and coffee_sales_data.txt, and
- store it all in some kind of data structure.
+ store it all of the data for each drink in one Drink object. One Drink object
+ should store that drink's name, price, number sold, cost to make one drink, price one drink sold for.
+ 
+ A Drink object should be able to calculate the total expenses to make all the drinks of that type sold;
+ the total price all of that drink of that type sold for, and profit for that type of drink.
  
  You should deal with any file-related exceptions properly.
  
@@ -64,7 +73,7 @@ package week_6;
  
  You should probably write some extra helper methods for the subtasks of this problem.
  
- Optional: write unit tests for your helper methods. Ask if you need help.
+ You'll need to write your own unit tests for your Drink class methods.
  
  Test and comment your code.
  
@@ -79,8 +88,8 @@ public class Question_3_Coffee_Shop {
     
     
     
-    public final String price_data_file = "coffee_price_data.txt";
-    public final String sales_data_file = "coffee_sales_data.txt";
+    public String price_data_file = "coffee_price_data.txt";
+    public String sales_data_file = "coffee_sales_data.txt";
     
     public String output_report_file = "daily_sales_report.txt";
     
