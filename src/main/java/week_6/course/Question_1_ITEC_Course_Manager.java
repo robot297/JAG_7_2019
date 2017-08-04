@@ -101,6 +101,9 @@ public class Question_1_ITEC_Course_Manager {
         
         
         // TODO part 3 Add all of the ITECCourse objects to the allITECCourses ArrayList
+        
+        
+        
         // TODO part 3 loop over all the courses
         // and print the ITECourse name, and the number of free spaces in the ITECCourse.
     
