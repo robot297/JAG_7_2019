@@ -42,6 +42,12 @@
 
     <dependencies>
 
+        <dependency>
+            <groupId>edu.minneapolis</groupId>
+            <artifactId>input-utils</artifactId>
+            <version>[1.0.0,)</version>
+        </dependency>
+
         <!-- JUnit is for running tests on your code. -->
         <dependency>
             <groupId>junit</groupId>

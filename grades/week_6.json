@@ -3,20 +3,20 @@
     {
       "question" : 1,
       "java_file": "course.Question_1_ITEC_Course_Manager",
-      "test_file": "Question_1_Write_Name_Color_Class_CodeTest",
-      "points": 1
+      "test_file": "course.Question_1_ITEC_Course_ManagerTest",
+      "points": 4
     },
     {
       "question" : 2,
-      "java_file": "lakes.Question_2_Write_Recycling_Report",
-      "test_file": "Question_2_Write_Recycling_ReportTest",
-      "points": 2
+      "java_file": "lakes.Question_2_Lake_Running",
+      "test_file": "lakes.Question_2_Lake_RunningTest",
+      "points": 8
     },
     {
       "question" : 3,
-      "java_file": "coffee.Question_4_Exception_Handling_Questions",
-      "test_file": "Question_4_Snowfall_HashmapTest",
-      "points": 3
+      "java_file": "coffee.Question_3_Coffee_Shop",
+      "test_file": "coffee.Question_3_Coffee_ShopTest",
+      "points": 8
     }
   ]
 }
