@@ -1,6 +1,7 @@
 package week_6.coffee;
 
 import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import test_utils.FileUtils;
 import week_6.coffee.Question_3_Coffee_Shop;
@@ -18,10 +19,17 @@ import static org.junit.Assert.*;
  */
 public class Question_3_Coffee_ShopTest {
     
+    String testPriceFilename;
+    String testSalesFilename;
+    String testOutputFile;
     
-    String testPriceFilename = "temporary_file_for_testing_test_price_data.txt";
-    String testSalesFilename = "temporary_file_for_testing_test_sales_data.txt";
-    String testOutputFile = "temporary_file_for_testing_report.txt";
+    
+    @Before
+    public void createFilenames() {
+        testPriceFilename = FileUtils.uniqueFilename("temporary_file_for_testing_test_price_data");
+        testSalesFilename = FileUtils.uniqueFilename("temporary_file_for_testing_test_sales_data.txt");
+        testOutputFile = FileUtils.uniqueFilename("temporary_file_for_testing_report.txt");
+    }
     
     @Test
     public void salesReport() throws Exception {
@@ -89,21 +97,29 @@ public class Question_3_Coffee_ShopTest {
     }
     
     
+    
+    
     @Test
     public void checkMethodDoesNotThrowException() throws Exception {
         //Verify readCoffeeDataFiles and writeReportFile do not throw exceptions
         
-        
         // TODO verify try-with-resources is used.
         
-        Class q7 = Class.forName("week_5.Question_7_Coffee_Shop");
+        Class q7 = Class.forName("week_6.coffee.Question_3_Coffee_Shop");
         
         Method mRead = q7.getMethod("readCoffeeDataFiles", String.class, String.class);
         assertEquals("Add try-catch blocks to your readCoffeeDataFiles method. Handle any possible exceptions with try-catch statements within the method.", 0, mRead.getExceptionTypes().length);
         
-        Method mWrite = q7.getMethod("writeReportFile", Object.class, String.class);
-        assertEquals("Add try-catch blocks to your writeReportFile method. Handle any possible exceptions with try-catch statements within the method.", 0, mWrite.getExceptionTypes().length);
         
+        // since the return type has changed, have to search the methods in the class, instead of being able to specify a particular method.
+        Method[] allMethods = q7.getMethods();
+        for (Method m : allMethods) {
+            if (m.getName().equals("writeReportFile")) {
+                assertEquals("Add try-catch blocks to your writeReportFile method. " +
+                        "Handle any possible exceptions with try-catch statements within the method.", 0, m.getExceptionTypes().length);
+                
+            }
+        }
         
     }
     
@@ -117,9 +133,9 @@ public class Question_3_Coffee_ShopTest {
         
         // Delete temporary files used for the tests.
         
-        FileUtils.deleteFile(testOutputFile);
-        FileUtils.deleteFile(testPriceFilename);
-        FileUtils.deleteFile(testSalesFilename);
+        FileUtils.moveToTemporaryTestFolder(testOutputFile);
+        FileUtils.moveToTemporaryTestFolder(testPriceFilename);
+        FileUtils.moveToTemporaryTestFolder(testSalesFilename);
     }
     
     

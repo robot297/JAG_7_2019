@@ -96,26 +96,5 @@ public class Question_2_Lake_RunningTest {
     }
     
     
-    // TODO write more tests for your Lake class
-    
-    @Test
-    public void testLakeClass() throws Exception {
-        
-        // TODO create an example Lake object
-        
-        // TODO add some example times to the Lake
-        
-        // TODO call method to get the fastest time, and assert that the correct time is returned
-        
-        // TODO call the method to get all of the times, and assert that all of the times that were added, have been stored in the Lake object
-        
-        // TODO add any other checks you think would be appropriate
-    
-        fail("Create a Lake class, and write tests for your Lake class"); //TODO remove this line once you've written your tests.
-    
-    
-    }
-    
-    
 }
 

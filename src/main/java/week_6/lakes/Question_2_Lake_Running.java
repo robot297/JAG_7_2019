@@ -50,7 +50,7 @@ import static input.InputUtils.*;
 public class Question_2_Lake_Running {
     
     // TODO create a global data structure to store all of your Lake objects.
-    // You methods will read and write to the lakes in this data structure.
+    // You methods will read and write to the Lakes in this data structure.
     
     
     public static void main(String[] args) {
