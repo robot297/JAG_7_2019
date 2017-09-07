@@ -17,7 +17,7 @@ public class ITECCourse {
     
     private ArrayList<String> students;
     
-    // TODO add a variable called room to store the room number a ITECCourse meets in
+    // TODO Part 1 add a variable called room to store the room number a ITECCourse meets in
     // TODO add get and set methods for the room variable
     
     
@@ -56,16 +56,20 @@ public class ITECCourse {
     // Notice no set method for getStudents. To modify, have to use th addStudent and removeStudent methods.
     
     
+    // TODO part 1 create a new constructor. It will have the same arguments
+    // as this constructor, plus one more: a String to set the room variable.
+    // Don't delete the current constructor.
+    // Is your code repetitive? You can call one constructor from another with this(arg1, arg 2)
+    
+    
     //Constructor - public
-    // TODO part 1 modify this constructor's arguments to include the room the ITECCourse meets in.
-    // The room argument should be the last argument.
-    // TODO part 1 modify the constructor code to set the room variable
     public ITECCourse(String courseName, int courseCode, int courseMaxStudents) {
         this.name = courseName;
         this.code = courseCode;
         this.students = new ArrayList<>();  //Set up the students list
         this.maxStudents = courseMaxStudents;
     }
+    
     
     
     // Instance methods. If other classes will need to call these for your
@@ -103,7 +107,8 @@ public class ITECCourse {
         System.out.println("There are " + getNumberOfStudents() + " students enrolled");
         System.out.println("The max number of students for this ITECCourse is  " + maxStudents);
         
-        //TODO part 1 print the room the ITECCourse meets in. If there is no room set, what will you print?
+        //TODO print the room the ITECCourse meets in. If there is no room set, what will you print?
+        //TODO print the number of free spaces in the course
     }
     
     

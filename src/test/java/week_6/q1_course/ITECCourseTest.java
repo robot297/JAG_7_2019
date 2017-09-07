@@ -101,20 +101,7 @@ public class ITECCourseTest {
         for (String ex : expectedStrings) {
             assertTrue(out + " should contain + " + ex, out.contains(ex));
         }
-    
-    
-        // Created with the new constructor
-    
-        PrintUtils.catchStandardOut();
-    
-     //   new ITECCourse("Test", 1234, 30, "T3040").writeCourseInfo();
-    
-     //   String out = PrintUtils.resetStandardOut();
-    
-        assertTrue(out.contains("Test"));
-        assertTrue(out.contains("1234"));
-        assertTrue(out.contains("30"));
-    
+        
     }
     
     
@@ -165,22 +152,22 @@ public class ITECCourseTest {
         
         Class[] parameters = con.getParameterTypes();
         Class[] parameters2 = con2.getParameterTypes();
-        
+    
         // This is kinda awkward. Look into refactoring.
         if (parameters.length == 4) {
             // This seems to be the new constructor, Make sure the 4th argument is a String
             assertEquals("Add a 4th String argument to the constructor to represent the room that the q1_course is held in.", parameters[3].getSimpleName(), "String");
-            
+        
             // And the other constructor's parameter list will be 3 elements
             assertEquals("Don't modify the existing constructor's parameters", parameters2.length, 3);
-        } else if (parameters2.length == 3) {
+        } else if (parameters2.length == 4) {
             // This one is the new constructor. Same checks.
             // This seems to be the new constructor, Make sure the 4th argument is a String
             assertEquals("Add a 4th String argument to the constructor to represent the room that the q1_course is held in.", parameters2[3].getSimpleName(), "String");
-            
+        
             // And the other constructor's parameter list will be 3 elements
             assertEquals("Don't modify the existing constructor's parameters", parameters.length, 3);
-            
+        
         } else {
             // no 4-argument constructor
             assertEquals("Add a 4th argument to the constructor to represent the room the q1_course is held in. The constructor should have 4 arguments.", parameters.length, 4);
@@ -235,6 +222,8 @@ public class ITECCourseTest {
         
         ITECCourse course = new ITECCourse("Test", 1234, 30);
         setRoom.invoke(course, "T-3050");
+    
+        room.setAccessible(true);
     
         // Correct value stored?
         assertEquals(room.get(course), "T-3050");

@@ -46,13 +46,13 @@ public class Question_1_ITEC_Course_ManagerTest {
         t2.addStudent("t2");
         t2.addStudent("t2");
         t2.addStudent("t2");
-        // Now there are 7 free spaces
+        // Now there are 6 free spaces
         
         ITECCourse t3 = new ITECCourse("Test 3", 3456, 3);
         // There are 3 free spaces
         
-        // Total free spaces 2 + 7 + 3 = 12
-    
+        // Total free spaces 2 + 6 + 3 = 11
+        int expectedSpace = 2 + 6 + 3;
     
         Class mgr = Class.forName("week_6.q1_course.Question_1_ITEC_Course_Manager");
         Field allField = mgr.getDeclaredField("allITECCourses");
@@ -66,7 +66,7 @@ public class Question_1_ITEC_Course_ManagerTest {
         allField.set(q1, expectedCourses);
         
         assertEquals("calculateTotalFreeSpace should add up the free space in all of your " +
-                "ITECCourse objects in the allITECCourse ArrayList", q1.calculateTotalFreeSpace(), 12);
+                "ITECCourse objects in the allITECCourse ArrayList", q1.calculateTotalFreeSpace(), expectedSpace);
     
     }
     
