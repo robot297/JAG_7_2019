@@ -1,21 +1,23 @@
-package week_6.course;
+package week_6.q1_course;
 
 import java.util.ArrayList;
 
 /**
- * Stores data about an ITEC course.
+ * Stores data about an ITECCourse.
  *
  */
 public class ITECCourse {
     
     // Data that an ITECCourse object needs to store
-    // Most commonly, variables will be private
+    // It's often best to make instance variables private
     private String name;
     private int code;
     private int maxStudents;
+    
+    
     private ArrayList<String> students;
     
-    // TODO add a variable called room to store the room number a course meets in
+    // TODO add a variable called room to store the room number a ITECCourse meets in
     // TODO add get and set methods for the room variable
     
     
@@ -48,24 +50,29 @@ public class ITECCourse {
         this.name = name;
     }
     
+    public ArrayList<String> getStudents() {
+        return students;
+    }
+    // Notice no set method for getStudents. To modify, have to use th addStudent and removeStudent methods.
+    
     
     //Constructor - public
-    // TODO part 1 modify this constructor's arguments to include the room the course meets in.
+    // TODO part 1 modify this constructor's arguments to include the room the ITECCourse meets in.
     // The room argument should be the last argument.
     // TODO part 1 modify the constructor code to set the room variable
-    public ITECCourse(String courseName, int courseCode, int courseMaxStudents, String room) {
+    public ITECCourse(String courseName, int courseCode, int courseMaxStudents) {
         this.name = courseName;
         this.code = courseCode;
-        this.students = new ArrayList<String>();  //Set up the students list
+        this.students = new ArrayList<>();  //Set up the students list
         this.maxStudents = courseMaxStudents;
     }
     
     
-    //Methods that other classes should be able to access can be public or protected
+    // Instance methods. If other classes will need to call these for your
+    // ITECCourse objects, they need to be public, package-protected or protected
     public void addStudent(String studentName) {
-        //No need to create ArrayList, the constructor has already done it
         
-        //Check to see if the course is full before adding new student
+        //Check to see if the ITECCourse is full before adding new student
         if (students.size() == maxStudents) {
             System.out.println("Course is full – can't add " + studentName);
             System.out.println("The maximum number of students is " + maxStudents);
@@ -94,9 +101,9 @@ public class ITECCourse {
             System.out.println(student);
         }
         System.out.println("There are " + getNumberOfStudents() + " students enrolled");
-        System.out.println("The max number of students for this course is  " + maxStudents);
+        System.out.println("The max number of students for this ITECCourse is  " + maxStudents);
         
-        //TODO part 1 print the room the course meets in. If there is no room set, what will you print?
+        //TODO part 1 print the room the ITECCourse meets in. If there is no room set, what will you print?
     }
     
     

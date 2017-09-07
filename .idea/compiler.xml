@@ -23,10 +23,12 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="Java_Auto_Grader_5_6_7" />
+        <module name="Java_Auto_Grader_Lab_6" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="Java_Auto_Grader_5_6_7" target="1.8" />
+      <module name="Java_Auto_Grader_Lab_6" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,10 +1,9 @@
-package week_6.coffee;
+package week_6.q3_coffee;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import test_utils.FileUtils;
-import week_6.coffee.Question_3_Coffee_Shop;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -105,7 +104,7 @@ public class Question_3_Coffee_ShopTest {
         
         // TODO verify try-with-resources is used.
         
-        Class q7 = Class.forName("week_6.coffee.Question_3_Coffee_Shop");
+        Class q7 = Class.forName("week_6.q3_coffee.Question_3_Coffee_Shop");
         
         Method mRead = q7.getMethod("readCoffeeDataFiles", String.class, String.class);
         assertEquals("Add try-catch blocks to your readCoffeeDataFiles method. Handle any possible exceptions with try-catch statements within the method.", 0, mRead.getExceptionTypes().length);

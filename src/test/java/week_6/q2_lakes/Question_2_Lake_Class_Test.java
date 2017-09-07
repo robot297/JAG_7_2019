@@ -1,9 +1,6 @@
-package week_6.lakes;
+package week_6.q2_lakes;
 
 import org.junit.Test;
-import test_utils.PrintUtils;
-
-import java.util.regex.Pattern;
 
 import static org.junit.Assert.*;
 

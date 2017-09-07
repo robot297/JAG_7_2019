@@ -1,4 +1,4 @@
-package week_6.lakes;
+package week_6.q2_lakes;
 
 import static input.InputUtils.*;
 
@@ -8,7 +8,7 @@ import static input.InputUtils.*;
  This is the same question from Lab 4, but you'll refactor your code to use Lake objects to store the data.
  
  You are a runner, and you are in training for a race. You'd like to keep track of all of your
- times for your training runs. You only like to run around lakes. Here's some example data,
+ times for your training runs. You only like to run around q2_lakes. Here's some example data,
  Cedar, 45.15
  Cedar, 43.32
  Harriet, 49.34
@@ -17,7 +17,7 @@ import static input.InputUtils.*;
  Como, 32.11
  Como, 28.14
  
- Write a program that enables you to enter the names of lakes and times, and store all of this
+ Write a program that enables you to enter the names of q2_lakes and times, and store all of this
  data.
  
  You'll need to save every time entered for each lake.
@@ -43,7 +43,7 @@ import static input.InputUtils.*;
  Your program should be case-insensitive. So "Como" is the same lake as "como" or "COMO".
  
  
- You should write some tests for your Lake class. In test/java/week_6/lakes/Question_2_Lake_RunningTest.java, finish
+ You should write some tests for your Lake class. In test/java/week_6/q2_lakes/Question_2_Lake_RunningTest.java, finish
  
  
  */

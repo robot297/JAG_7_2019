@@ -1,4 +1,4 @@
-package week_6.lakes;
+package week_6.q2_lakes;
 
 import org.junit.Test;
 import test_utils.PrintUtils;

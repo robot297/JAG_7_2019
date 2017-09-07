@@ -1,4 +1,4 @@
-package week_6.coffee;
+package week_6.q3_coffee;
 
 /**
  *
@@ -6,10 +6,10 @@ package week_6.coffee;
  This is the same question as week 5, but you'll refactor your program to
  use Drink objects.
  
- Write a program that creates a sales report for a coffee shop.
- The coffee shop will use this at the end of every day to calculate sales, expenses, and profit.
+ Write a program that creates a sales report for a q3_coffee shop.
+ The q3_coffee shop will use this at the end of every day to calculate sales, expenses, and profit.
  
- The coffee shop sells 12 different drinks. The name of each drink, the price the shop
+ The q3_coffee shop sells 12 different drinks. The name of each drink, the price the shop
  charges the customer, and how much it costs to make each drink, are saved in the file
  coffee_price_data.txt. It's in the root directory of this project.
  
@@ -21,7 +21,7 @@ package week_6.coffee;
  
  Cappuccino;1.56;3.50
  
- So the cappuccino drink costs the coffee shop $1.56 to make, and they charge the customer $3.50.
+ So the cappuccino drink costs the q3_coffee shop $1.56 to make, and they charge the customer $3.50.
  
  The file coffee_sales_data.txt contains the sales data for one day. This file is in the format
  
@@ -31,7 +31,7 @@ package week_6.coffee;
  
  Cappuccino;100
  
- The coffee shop sold 100 cappuccino drinks.
+ The q3_coffee shop sold 100 cappuccino drinks.
  
  
  
@@ -50,7 +50,7 @@ package week_6.coffee;
  make the total quantity of those drinks (expenses), and the total amount (revenue) spent by
  customers on that drink.
  
- So, for example, if the coffee shop sold 100 cappuccinos today, you'll write a line that says
+ So, for example, if the q3_coffee shop sold 100 cappuccinos today, you'll write a line that says
  
  Cappuccino: Sold 100, Expenses $150.60, Revenue $350.00, Profit $190.40
  
