@@ -37,10 +37,13 @@ import java.util.ArrayList;
  Modify ITECCourseManager testCourseManagerMethods() to add all of your ITECCourse objects to the
  allITECCourses ArrayList. You should have 4 (or more) ITECCourse objects.
  
+ Finish the calculateTotalFree space method. It should add up all of the free space in all of the courses
+ in allITECCourses. It will return the total free spaces, as an integer.
+ 
+ Part 4:
+ 
  At the end of testCourseManagerMethods(), loop over all of the ITECCourse objects and
  print the name of each ITECCourse, and the number of free spaces in each ITECCcourse.
- 
- 
  
  */
 
@@ -83,7 +86,7 @@ public class Question_1_ITEC_Course_Manager {
         System.out.println("The maximum number of students is now " + maintenanceCourse.getMaxStudents());
     
     
-        // Another test object. This represents the Data Communcations course
+        // Another test object. This represents the Data Communications course
         ITECCourse datacomCourse = new ITECCourse("Data Communications", 1424, 30);
     
         datacomCourse.addStudent("Dora");
@@ -103,11 +106,11 @@ public class Question_1_ITEC_Course_Manager {
         smallCourse.addStudent("Marigold");
         
         
-        // TODO Part 1 Create a new ITECCourse object using the new constructor
+        // TODO Part 1 Create a new ITECCourse object with a room. Use your new constructor
         
         
         
-        // TODO part 3 Add all of the ITECCourse objects to the allITECCourses ArrayList
+        // TODO part 3/4 Add all of the ITECCourse objects to the allITECCourses ArrayList
         // Figure out the total number of free spaces in all the classes.
         int totalSpacesLeft = calculateTotalFreeSpace();
     
@@ -115,10 +118,8 @@ public class Question_1_ITEC_Course_Manager {
                 String.format("There are %d spaces remaining in all the ITEC courses", totalSpacesLeft));
     
     
-        // TODO part 4
-        //At the end of testCourseManagerMethods(), loop over all of the ITECCourse objects and
-        //print the name of each ITECCourse, and the number of free spaces in each ITECCcourse.
-    
+        // TODO part 4 Loop over all of the ITECCourse objects and call writeCourseInfo for each
+        
     
     }
     

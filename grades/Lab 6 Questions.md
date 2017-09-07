@@ -1,38 +1,49 @@
 # Lab 6
 
 ### Problem 1:
+ 
+  **Part 1:**
+  
+  Modify ITECCourse. Add a variable to store the room that the ITECCourse meets in.
+  Should this variable be public, protected, or private?
+  The variable's name should be 'room'
+  Add get and set methods (setRoom and getRoom) for this variable.
+  
+  Add a second ITECCourse constructor so that there are two ways to create ITECCourse objects.
+  The second constructor will take 4 arguments: the same 3 as the current constructor, plus a String
+  to specify the room when you create an ITECCourse object. The room should be the 4th argument.
+  
+  Test your code by creating a ITECCourse object for this class:
+  Name: Info Tech Concepts, code 1100, max students 30, room T3050.
+  Enroll Miriam, and Nils, and Oprah.
+  
+  
+  **Part 2:**
+  
+  Add a method to ITECCourse.java called freeSpace. This method will return the number of free spaces
+  in the class.
+  
+  So if the max number of students in a class is 30, and there are 10 students enrolled,
+  this method will return 20.
+  
+  Modify writeCourseInfo to print the room and the free space.
+  Print the room, if there is one. Or print a "no room" message if the ITECCourse does not have a room.
+  
+  
+  **Part 3:**
+  
+  Modify ITECCourseManager testCourseManagerMethods() to add all of your ITECCourse objects to the
+  allITECCourses ArrayList. You should have 4 (or more) ITECCourse objects.
+  
+  Finish the calculateTotalFree space method. It should add up all of the free space in all of the courses
+  in allITECCourses. It will return the total free spaces, as an integer. 
+  
+  
+  **Part 4:** 
+  
+  At the end of testCourseManagerMethods(), loop over all of the ITECCourse objects and
+  print the name of each ITECCourse, and the number of free spaces in each ITECCcourse.
 
- Part 1 :
- 
- Modify ITECCourse to add a variable to store the room that the course meets in.
- Should this variable be public, protected, or private?
- Add get and set methods for this variable.
- 
- Modify ITECCourse's constructor so that you can specify the room when you create an ITECCourse object.
- Modify writeCourseInfo so that it also prints the room.
- 
- Test your code by creating a ITECCourse object for this class:
- Name: Info Tech Concepts, code 1100, max students 30, room T3050.
- Enroll Miriam, and Nils, and Oprah.
- 
- When you modify the constructor, the current code that uses the old constructor won't compile.
- what will you do with the other ITECCourse objects for which you don't know the room? (Hint: null is often used for unknown values)
- 
- Part 2:
- 
- Add a method to ITECCourse that returns the number of free spaces in the class.
- So if the max number of students in a class is 30, and there are 10 students enrolled,
- this method will return 20.
-
- 
- Part 3:
- 
- Modify ITECCourseManager testCourseManagerMethods() to add all of the ITECCourse objects to the
- allITECCourses ArrayList.
- 
- At the end of testCourseManagerMethods(), loop over all of the ITECCourse objects and
- print the name of each course, and the number of free spaces in each course.
- 
 
 
 ### Problem 2: Lakes
