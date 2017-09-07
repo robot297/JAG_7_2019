@@ -99,27 +99,20 @@ public class Question_3_Coffee_ShopTest {
     
     
     @Test
-    public void checkMethodDoesNotThrowException() throws Exception {
+    public void checkMethodsDoNotThrowException() throws Exception {
         //Verify readCoffeeDataFiles and writeReportFile do not throw exceptions
         
-        // TODO verify try-with-resources is used.
+        // TODO verify try-with-resources is used. Check methods and verify none throw exceptions.
         
         Class q7 = Class.forName("week_6.q3_coffee.Question_3_Coffee_Shop");
         
-        Method mRead = q7.getMethod("readCoffeeDataFiles", String.class, String.class);
-        assertEquals("Add try-catch blocks to your readCoffeeDataFiles method. Handle any possible exceptions with try-catch statements within the method.", 0, mRead.getExceptionTypes().length);
-        
-        
         // since the return type has changed, have to search the methods in the class, instead of being able to specify a particular method.
-        Method[] allMethods = q7.getMethods();
+        Method[] allMethods = q7.getDeclaredMethods();
         for (Method m : allMethods) {
-            if (m.getName().equals("writeReportFile")) {
-                assertEquals("Add try-catch blocks to your writeReportFile method. " +
-                        "Handle any possible exceptions with try-catch statements within the method.", 0, m.getExceptionTypes().length);
+            assertEquals("Add try-catch blocks to your writeReportFile method. " +
+                    "Handle any possible exceptions with try-catch statements within the method.", 0, m.getExceptionTypes().length);
                 
             }
-        }
-        
     }
     
     
@@ -136,11 +129,6 @@ public class Question_3_Coffee_ShopTest {
         FileUtils.moveToTemporaryTestFolder(testPriceFilename);
         FileUtils.moveToTemporaryTestFolder(testSalesFilename);
     }
-    
-    
-    
-    
-    
     
 }
 

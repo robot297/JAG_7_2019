@@ -13,8 +13,8 @@ public class Question_2_Lake_Class_Test {
     @Test
     public void testLakeClassSavesName() throws Exception {
         
-        //TODO - a simple test. Create a Lake object and set the name.
-        // Read the name, and assert it's the same as the value that was set.
+        //TODO - a simple test. Create a Lake object and set the name, either with a constructor or a set method.
+        // Read the name, probably with a get method, and assert it's the same as the value that was set.
 
         fail("implement this test"); //TODO remove this line once you've written your test.
         

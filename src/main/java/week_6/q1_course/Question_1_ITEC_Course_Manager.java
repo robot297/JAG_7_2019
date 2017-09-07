@@ -40,10 +40,11 @@ import java.util.ArrayList;
  Finish the calculateTotalFree space method. It should add up all of the free space in all of the courses
  in allITECCourses. It will return the total free spaces, as an integer.
  
+ 
  Part 4:
  
  At the end of testCourseManagerMethods(), loop over all of the ITECCourse objects and
- print the name of each ITECCourse, and the number of free spaces in each ITECCcourse.
+ print the name of each ITECCourse, and the number of free spaces in each ITECCourse.
  
  */
 

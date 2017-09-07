@@ -49,6 +49,8 @@ import static input.InputUtils.*;
  
  
  */
+
+
 public class Question_2_Lake_Running {
     
     // TODO create a global data structure to store all of your Lake objects.
