@@ -2,23 +2,30 @@ package week_6.q1_course;
 
 import org.junit.Test;
 
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+
 import static org.junit.Assert.*;
 
 
 public class Question_1_ITEC_Course_ManagerTest {
     
-    
-
-
-    
-    
     @Test
     public void testAddITECCoursesToArrayList() throws Exception {
-    
+        
         Question_1_ITEC_Course_Manager q1 = new Question_1_ITEC_Course_Manager();
-        q1.testCourseManagerMethods();
+        q1.useCourseManagerMethods();
+        
+        // Get private allITECourses variable.
+        // So private variables are normally private, but you can still get and set them using reflection.
+        Class mgr = Class.forName("week_6.q1_course.Question_1_ITEC_Course_Manager");
+        Field all = mgr.getDeclaredField("allITECCourses");
+        all.setAccessible(true);   // Since it's private, have to request that we can access it.
+        ArrayList<ITECCourse> expectedCourses  = (ArrayList<ITECCourse>) all.get(q1);
+        
+        
         assertTrue("Add 4 (or more) ITECCourse objects to the allITECCourses ArrayList. " +
-                "\nAdd the 3 that are already created. Create another 1 (or more) ITECCourse objects and add that too.", q1.allITECCourses.size() >= 4);
+                "\nAdd the 3 that are already created. Create another 1 (or more) ITECCourse objects and add that too.", expectedCourses.size() >= 4);
         
     }
     
@@ -46,9 +53,17 @@ public class Question_1_ITEC_Course_ManagerTest {
         
         // Total free spaces 2 + 7 + 3 = 12
     
-        q1.allITECCourses.add(t1);
-        q1.allITECCourses.add(t2);
-        q1.allITECCourses.add(t3);
+    
+        Class mgr = Class.forName("week_6.q1_course.Question_1_ITEC_Course_Manager");
+        Field allField = mgr.getDeclaredField("allITECCourses");
+        allField.setAccessible(true);
+        ArrayList<ITECCourse> expectedCourses  = (ArrayList<ITECCourse>) allField.get(q1);
+    
+        expectedCourses.add(t1);
+        expectedCourses.add(t2);
+        expectedCourses.add(t3);
+        
+        allField.set(q1, expectedCourses);
         
         assertEquals("calculateTotalFreeSpace should add up the free space in all of your " +
                 "ITECCourse objects in the allITECCourse ArrayList", q1.calculateTotalFreeSpace(), 12);

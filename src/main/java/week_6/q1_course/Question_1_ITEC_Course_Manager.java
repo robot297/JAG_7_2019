@@ -51,14 +51,14 @@ public class Question_1_ITEC_Course_Manager {
     
     public static void main(String[] args) {
         Question_1_ITEC_Course_Manager manager = new Question_1_ITEC_Course_Manager();
-        manager.testCourseManagerMethods();
+        manager.useCourseManagerMethods();
     }
     
     // Global variable to store all ITECCourse objects
-    ArrayList<ITECCourse> allITECCourses = new ArrayList<>();
+    private ArrayList<ITECCourse> allITECCourses = new ArrayList<>();
     
     
-    public void testCourseManagerMethods() {
+    public void useCourseManagerMethods() {
     
         // Create an ITECCourse object called maintenanceCourse
         ITECCourse maintenanceCourse = new ITECCourse("Microcomputer Systems Maintenance", 1310, 20);
