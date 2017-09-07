@@ -61,13 +61,21 @@ public class Question_2_Lake_Running {
     
     public void running() {
         
+        // Get data from user
         while (moreLakes())  {
             String lakeName = stringInput("Enter lake name");
             double runTime = doubleInput("Enter time for running lake " + lakeName);
             addRunTime(lakeName, runTime);
         }
         
+        // Display fastest time for all lakes
         printFastestTimeForAllLakes();
+        
+        
+        // Search for the fastest time for a Lake
+        String searchLake = stringInput("Enter a lake name to search for the fastest time");
+        double fastest = fastestTimeForLake(searchLake);
+        System.out.println(String.format("The fastest time for %s is %f minutes", searchLake, fastest));
         
     }
     
@@ -81,7 +89,6 @@ public class Question_2_Lake_Running {
         // Lake Harriet, 50.12 minutes
         // Como Lake, 45.12 minutes
         // ....
-        // Use the fastestTimeForLake method to help.
         
         
     }
@@ -101,7 +108,9 @@ public class Question_2_Lake_Running {
     
     
     public void addRunTime(String lakeName, double time) {
-        // TODO Create a new Lake object, and add to your data structure
+        // TODO
+        // If the lake is already in your data structure, add this time to the lake.
+        // If not, create a new Lake object, and add to your data structure
         // Your lake name should not be case sensitive. "Como" and "COMO" and "como" are all the same lake.
         
     }
