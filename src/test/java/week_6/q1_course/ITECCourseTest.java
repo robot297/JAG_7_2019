@@ -84,7 +84,7 @@ public class ITECCourseTest {
     
     @Test
     public void writeCourseInfo() throws Exception {
-    
+        
         PrintUtils.catchStandardOut();
         
         ITECCourse test = new ITECCourse("Test Class", 9999, 30);
@@ -92,9 +92,9 @@ public class ITECCourseTest {
         test.addStudent("example2");
         
         String[] expectedStrings = {"Test Class", "9999", "30", "28", "example1", "example2"};
-                
+        
         test.writeCourseInfo();
-    
+        
         
         String out = PrintUtils.resetStandardOut();
         
@@ -102,6 +102,28 @@ public class ITECCourseTest {
             assertTrue(out + " should contain + " + ex, out.contains(ex));
         }
         
+        
+        Class courseMgr = Class.forName("week_6.q1_course.ITECCourse");
+        Constructor[] constructors = courseMgr.getConstructors();
+        for (Constructor c : constructors) {
+            if (c.getParameters().length == 4) {
+                //the new 4-arg constructor
+                //Make an object
+                ITECCourse course = (ITECCourse) c.newInstance("Test Class", 9999, 30, "T-3050");
+                course.addStudent("example1");
+                course.addStudent("example2");
+                
+                PrintUtils.catchStandardOut();
+                course.writeCourseInfo();
+                String out2 = PrintUtils.resetStandardOut();
+                
+                for (String ex : expectedStrings) {
+                    assertTrue(out2 + " should contain + " + ex, out.contains(ex));   //Same data as previous example
+                }
+                assertTrue(out2 + " should contain T-3050", out2.contains("T-3050"));  // Plus the room
+                
+            }
+        }
     }
     
     
@@ -160,6 +182,9 @@ public class ITECCourseTest {
         
             // And the other constructor's parameter list will be 3 elements
             assertEquals("Don't modify the existing constructor's parameters", parameters2.length, 3);
+    
+            con.newInstance("Test", 1000, 30, "T3000"); //This should not error
+
         } else if (parameters2.length == 4) {
             // This one is the new constructor. Same checks.
             // This seems to be the new constructor, Make sure the 4th argument is a String
@@ -168,12 +193,14 @@ public class ITECCourseTest {
             // And the other constructor's parameter list will be 3 elements
             assertEquals("Don't modify the existing constructor's parameters", parameters.length, 3);
         
+            con2.newInstance("Test", 1000, 30, "T3000"); //This should not error
+            
         } else {
             // no 4-argument constructor
             assertEquals("Add a 4th argument to the constructor to represent the room the q1_course is held in. The constructor should have 4 arguments.", parameters.length, 4);
         }
         
-        // Should try creating an object with this constructor.
+        
         
     }
     
