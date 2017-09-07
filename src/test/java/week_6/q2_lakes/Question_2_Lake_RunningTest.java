@@ -20,16 +20,16 @@ public class Question_2_Lake_RunningTest {
         
         Question_2_Lake_Running q5 = new Question_2_Lake_Running();
         
-        q5.addLake("Como", 5);
-        q5.addLake("Como", 6);
-        q5.addLake("CoMo", 3);
+        q5.addRunTime("Como", 5);
+        q5.addRunTime("Como", 6);
+        q5.addRunTime("CoMo", 3);
         
-        q5.addLake("Harriet", 5);
-        q5.addLake("HaRRiet", 16);
+        q5.addRunTime("Harriet", 5);
+        q5.addRunTime("HaRRiet", 16);
         
         
-        q5.addLake("Superior", 45345);
-        q5.addLake("Superior", 1121226);
+        q5.addRunTime("Superior", 45345);
+        q5.addRunTime("Superior", 1121226);
         
         PrintUtils.catchStandardOut();
         
@@ -57,16 +57,16 @@ public class Question_2_Lake_RunningTest {
         Question_2_Lake_Running q5 = new Question_2_Lake_Running();
         
         
-        q5.addLake("Lake Como", 5);
-        q5.addLake("Lake Como", 6);
-        q5.addLake("Lake Como", 3);
+        q5.addRunTime("Lake Como", 5);
+        q5.addRunTime("Lake Como", 6);
+        q5.addRunTime("Lake Como", 3);
         
-        q5.addLake("Harriet", 5);
-        q5.addLake("Harriet", 16);
+        q5.addRunTime("Harriet", 5);
+        q5.addRunTime("Harriet", 16);
         
         
-        q5.addLake("Superior", 45345);
-        q5.addLake("Superior", 1121226);
+        q5.addRunTime("Superior", 45345);
+        q5.addRunTime("Superior", 1121226);
         
         // In the same case....
         assertEquals(3, q5.fastestTimeForLake("Lake Como"), delta);
@@ -91,9 +91,9 @@ public class Question_2_Lake_RunningTest {
         Question_2_Lake_Running q5 = new Question_2_Lake_Running();
         
         
-        q5.addLake("Como", 5);
-        q5.addLake("CoMo", 2);
-        q5.addLake("COMO", 3);    // Should all be considered the same lake.
+        q5.addRunTime("Como", 5);
+        q5.addRunTime("CoMo", 2);
+        q5.addRunTime("COMO", 3);    // Should all be considered the same lake.
         
         
         

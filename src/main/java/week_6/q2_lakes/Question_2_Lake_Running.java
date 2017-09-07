@@ -62,9 +62,9 @@ public class Question_2_Lake_Running {
     public void running() {
         
         while (moreLakes())  {
-            String name = stringInput("Enter lake name");
-            double time = doubleInput("Enter time for running lake " + name);
-            addLake(name, time);
+            String lakeName = stringInput("Enter lake name");
+            double runTime = doubleInput("Enter time for running lake " + lakeName);
+            addRunTime(lakeName, runTime);
         }
         
         printFastestTimeForAllLakes();
@@ -100,7 +100,7 @@ public class Question_2_Lake_Running {
     }
     
     
-    public void addLake(String name, double time) {
+    public void addRunTime(String lakeName, double time) {
         // TODO Create a new Lake object, and add to your data structure
         // Your lake name should not be case sensitive. "Como" and "COMO" and "como" are all the same lake.
         
