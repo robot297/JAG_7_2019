@@ -12,6 +12,9 @@ import static org.junit.Assert.*;
  */
 public class Question_2_Lake_RunningTest {
     
+    double delta = 0.000001;
+    
+    
     @Test
     public void testPrintFastestTimeForAllLakes() throws Exception {
         
@@ -65,12 +68,19 @@ public class Question_2_Lake_RunningTest {
         q5.addLake("Superior", 45345);
         q5.addLake("Superior", 1121226);
         
-        double delta = 0.000001;
-        
+        // In the same case....
         assertEquals(3, q5.fastestTimeForLake("Lake Como"), delta);
         assertEquals(5, q5.fastestTimeForLake("Harriet"), delta);
         assertEquals(45345, q5.fastestTimeForLake("Superior"), delta);
+        
+        //Various cases
+        assertEquals(5, q5.fastestTimeForLake("Harriet"), delta);
+        assertEquals(5, q5.fastestTimeForLake("HARRIET"), delta);
+        assertEquals(5, q5.fastestTimeForLake("harriET"), delta);
+    
+        // Non-existent lakes
         assertEquals("This method should return -1 if a lake is not found", -1, q5.fastestTimeForLake("Not There"), delta);
+        assertEquals("This method should return -1 if a lake is not found", -1, q5.fastestTimeForLake("Harriett"), delta);
         
     }
     
@@ -86,7 +96,7 @@ public class Question_2_Lake_RunningTest {
         q5.addLake("COMO", 3);    // Should all be considered the same lake.
         
         
-        double delta = 0.000001;
+        
         assertEquals(2, q5.fastestTimeForLake("Como"), delta);
         assertEquals(2, q5.fastestTimeForLake("CoMo"), delta);
         assertEquals(2, q5.fastestTimeForLake("cOMO"), delta);
