@@ -2,20 +2,20 @@
   "questions" : [
     {
       "question" : 1,
-      "java_file": "course.Question_1_ITEC_Course_Manager",
-      "test_file": "course.Question_1_ITEC_Course_ManagerTest",
+      "java_file": "q1_course.Question_1_ITEC_Course_Manager",
+      "test_file": ["q1_course.Question_1_ITEC_Course_ManagerTest", "q1_course.ITECCourseTest"],
       "points": 4
     },
     {
       "question" : 2,
-      "java_file": "lakes.Question_2_Lake_Running",
-      "test_file": "lakes.Question_2_Lake_RunningTest",
+      "java_file": "q2_lakes.Question_2_Lake_Running",
+      "test_file": ["q2_lakes.lakes.Question_2_Lake_RunningTest", "q2_lakes.Question_2_Lake_Class_Test"],
       "points": 8
     },
     {
       "question" : 3,
-      "java_file": "coffee.Question_3_Coffee_Shop",
-      "test_file": "coffee.Question_3_Coffee_ShopTest",
+      "java_file": "q3_coffee.Question_3_Coffee_Shop",
+      "test_file": ["q3_coffee.Question_3_Coffee_ShopTest"],
       "points": 8
     }
   ]
