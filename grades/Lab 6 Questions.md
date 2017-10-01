@@ -1,6 +1,6 @@
 # Lab 6
 
-### Problem 1:
+### Problem 1: ITEC Courses
  
  **Part 1:**
  
