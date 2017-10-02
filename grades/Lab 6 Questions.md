@@ -96,9 +96,8 @@
  Your program should be case-insensitive. So "Como" is the same lake as "como" or "COMO".
  
  
- **You should write some tests for your Lake class. Finish the incomplete tests in
- In test/java/week_6/q2_lakes/Question_2_Lake_RunningTest.java.**
- 
+ **Optional** You can write some tests for your Lake class. Finish the incomplete tests in
+ In test/java/week_6/q2_lakes/Question_2_Lake_RunningTest.java. 
  
 
 
@@ -185,7 +184,7 @@
  
  You should probably write some extra helper methods for the sub-tasks of this problem.
  
- You'll need to write your own unit tests for your Drink class methods.
+ **Optional** You can write your own unit tests for your Drink class methods.
  
  Test and comment your code.
  

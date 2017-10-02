@@ -70,7 +70,7 @@ package week_6.q3_coffee;
  
  You should probably write some extra helper methods for the sub-tasks of this problem.
  
- You'll need to write your own unit tests for your Drink class methods.
+ Optional: You can write your own unit tests for your Drink class methods.
  
  Test and comment your code.
  

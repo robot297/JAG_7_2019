@@ -44,7 +44,7 @@ import static input.InputUtils.*;
  Your program should be case-insensitive. So "Como" is the same lake as "como" or "COMO".
  
  
- You should write some tests for your Lake class. Finish the incomplete tests in
+ Optional: You can write some tests for your Lake class. Finish the incomplete tests in
  In test/java/week_6/q2_lakes/Question_2_Lake_RunningTest.java
  
  
