@@ -18,6 +18,7 @@ public class Question_1_ITEC_Course_ManagerTest {
         
         // Get private allITECourses variable.
         // So private variables are normally private, but you can still get and set them using reflection.
+        // this is not recommended, with some exception - it's a good idea to respect the access modifiers.
         Class mgr = Class.forName("week_6.q1_course.Question_1_ITEC_Course_Manager");
         Field all = mgr.getDeclaredField("allITECCourses");
         all.setAccessible(true);   // Since it's private, have to request that we can access it.

@@ -13,9 +13,6 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by clara on 9/7/17.
- */
 public class ITECCourseTest {
   
     // Several of these tests should currently pass, they are for the existing code.
@@ -35,7 +32,7 @@ public class ITECCourseTest {
         ArrayList<String> students = ArrayListUtils.newStringArrayList(n1, n2, n3);
         assertTrue(ArrayListUtils.stringArrayListEqual(students, test.getStudents()));
         
-        // No room at all!
+        // No classroom at all!
         ITECCourse test2 = new ITECCourse("Test", 1234, 0);
         test2.addStudent(n1);
         assertEquals(test2.getNumberOfStudents(), 0);  // Not added
@@ -120,7 +117,7 @@ public class ITECCourseTest {
                 for (String ex : expectedStrings) {
                     assertTrue(out2 + " should contain + " + ex, out.contains(ex));   //Same data as previous example
                 }
-                assertTrue(out2 + " should contain T-3050", out2.contains("T-3050"));  // Plus the room
+                assertTrue(out2 + " should contain T-3050", out2.contains("T-3050"));  // Plus the classroom
                 
             }
         }
@@ -178,7 +175,7 @@ public class ITECCourseTest {
         // This is kinda awkward. Look into refactoring.
         if (parameters.length == 4) {
             // This seems to be the new constructor, Make sure the 4th argument is a String
-            assertEquals("Add a 4th String argument to the constructor to represent the room that the q1_course is held in.", parameters[3].getSimpleName(), "String");
+            assertEquals("Add a 4th String argument to the constructor to represent the classroom that the q1_course is held in.", parameters[3].getSimpleName(), "String");
         
             // And the other constructor's parameter list will be 3 elements
             assertEquals("Don't modify the existing constructor's parameters", parameters2.length, 3);
@@ -188,7 +185,7 @@ public class ITECCourseTest {
         } else if (parameters2.length == 4) {
             // This one is the new constructor. Same checks.
             // This seems to be the new constructor, Make sure the 4th argument is a String
-            assertEquals("Add a 4th String argument to the constructor to represent the room that the q1_course is held in.", parameters2[3].getSimpleName(), "String");
+            assertEquals("Add a 4th String argument to the constructor to represent the classroom that the q1_course is held in.", parameters2[3].getSimpleName(), "String");
         
             // And the other constructor's parameter list will be 3 elements
             assertEquals("Don't modify the existing constructor's parameters", parameters.length, 3);
@@ -197,7 +194,7 @@ public class ITECCourseTest {
             
         } else {
             // no 4-argument constructor
-            assertEquals("Add a 4th argument to the constructor to represent the room the q1_course is held in. The constructor should have 4 arguments.", parameters.length, 4);
+            assertEquals("Add a 4th argument to the constructor to represent the classroom the q1_course is held in. The constructor should have 4 arguments.", parameters.length, 4);
         }
         
         
@@ -207,56 +204,56 @@ public class ITECCourseTest {
     @Test
     public void testITECCourseManagerGetSet() throws Exception {
         
-        // Check for a private room variable, and get and set methods variable
+        // Check for a private classroom variable, and get and set methods variable
         
         Class courseMgr = Class.forName("week_6.q1_course.ITECCourse");
         
         
-        Method getRoom = null, setRoom = null;
-        Field room = null;
+        Method getclassroom = null, setclassroom = null;
+        Field classroom = null;
         try {
-            getRoom = courseMgr.getMethod("getRoom");
+            getclassroom = courseMgr.getMethod("getclassroom");
             // No parameters, returns a String
-            assertEquals("getRoom should not take any arguments", getRoom.getParameterCount(), 0);
-            assertEquals("getRoom should return a String", getRoom.getReturnType().getSimpleName(), "String");
+            assertEquals("getclassroom should not take any arguments", getclassroom.getParameterCount(), 0);
+            assertEquals("getclassroom should return a String", getclassroom.getReturnType().getSimpleName(), "String");
         } catch (NoSuchMethodException ce) {
-            fail("Add a getRoom() method to ITECCourse.java");
+            fail("Add a getclassroom() method to ITECCourse.java");
         }
         
         try {
-            // setRoom should have one String parameter, returns void
-            setRoom = courseMgr.getMethod("setRoom", String.class);
-            assertEquals("getRoom should return a String", setRoom.getReturnType(), void.class);
+            // setclassroom should have one String parameter, returns void
+            setclassroom = courseMgr.getMethod("setclassroom", String.class);
+            assertEquals("getclassroom should return a String", setclassroom.getReturnType(), void.class);
         } catch (NoSuchMethodException ce) {
-            fail("Add a setRoom() method to ITECCourse.java which takes one String argument");
+            fail("Add a setclassroom() method to ITECCourse.java which takes one String argument");
         }
         
         
-        // Check for a private room variable. Class variables aka fields.
+        // Check for a private classroom variable. Class variables aka fields.
         
         try {
-            room = courseMgr.getDeclaredField("room");
+            classroom = courseMgr.getDeclaredField("classroom");
             //assert f is private
-            int modifiers = room.getModifiers();
-            assertEquals("The room variable should be private", modifiers, Modifier.PRIVATE);
+            int modifiers = classroom.getModifiers();
+            assertEquals("The classroom variable should be private", modifiers, Modifier.PRIVATE);
             
         } catch (NoSuchFieldException e) {
-            fail("Add a private variable called 'room' to the ITECCourse class.");
+            fail("Add a private variable called 'classroom' to the ITECCourse class.");
         }
         
         
         // Try using these methods
         
         ITECCourse course = new ITECCourse("Test", 1234, 30);
-        setRoom.invoke(course, "T-3050");
+        setclassroom.invoke(course, "T-3050");
     
-        room.setAccessible(true);
+        classroom.setAccessible(true);
     
         // Correct value stored?
-        assertEquals(room.get(course), "T-3050");
+        assertEquals(classroom.get(course), "T-3050");
     
         // Right value returned?
-        assertEquals(getRoom.invoke(course), "T-3050");
+        assertEquals(getclassroom.invoke(course), "T-3050");
         
         
     }

@@ -6,17 +6,17 @@ import java.util.ArrayList;
  
  Part 1:
  
- Modify ITECCourse. Add a variable to store the room that the ITECCourse meets in.
+ Modify ITECCourse. Add a variable to store the classroom that the ITECCourse meets in.
  Should this variable be public, protected, or private?
- The variable's name should be 'room'
- Add get and set methods (setRoom and getRoom) for this variable.
+ The variable's name should be 'classroom'
+ Add get and set methods (setClassroom and getClassoom) for this variable.
  
  Add a second ITECCourse constructor so that there are two ways to create ITECCourse objects.
  The second constructor will take 4 arguments: the same 3 as the current constructor, plus a String
- to specify the room when you create an ITECCourse object. The room should be the 4th argument.
+ to specify the classroom when you create an ITECCourse object. The classroom should be the 4th argument.
  
  Test your code by creating a ITECCourse object for this class:
- Name: Info Tech Concepts, code 1100, max students 30, room T3050.
+ Name: Info Tech Concepts, code 1100, max students 30, classroom T3050.
  Enroll Miriam, and Nils, and Oprah.
  
  
@@ -28,8 +28,8 @@ import java.util.ArrayList;
  So if the max number of students in a class is 30, and there are 10 students enrolled,
  this method will return 20.
  
- Modify writeCourseInfo to print the room and the free space.
- Print the room, if there is one. Or print a "no room" message if the ITECCourse does not have a room.
+ Modify writeCourseInfo to include  the classroom and the free space.
+ Print the classroom, if there is one. Or print a "no classroom" message if the ITECCourse does not have a classroom.
  
  
  Part 3:
@@ -107,7 +107,7 @@ public class Question_1_ITEC_Course_Manager {
         smallCourse.addStudent("Marigold");
         
         
-        // TODO Part 1 Create a new ITECCourse object with a room. Use your new constructor
+        // TODO Part 1 Create a new ITECCourse object with a classroom. Use your new constructor
         
         
         
