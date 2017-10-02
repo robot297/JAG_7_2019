@@ -90,7 +90,7 @@
  ```
  Cedar, 43.32
  Harriet, 44.43
- Como, 32.11
+ Como, 28.14
  ```
  
  Your program should be case-insensitive. So "Como" is the same lake as "como" or "COMO".

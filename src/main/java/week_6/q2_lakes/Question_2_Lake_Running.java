@@ -39,7 +39,7 @@ import static input.InputUtils.*;
  
  Cedar, 43.32
  Harriet, 44.43
- Como, 32.11
+ Como, 28.14
  
  Your program should be case-insensitive. So "Como" is the same lake as "como" or "COMO".
  
@@ -75,10 +75,17 @@ public class Question_2_Lake_Running {
         
         
         // Search for the fastest time for a Lake
-        String searchLake = stringInput("Enter a lake name to search for the fastest time");
-        double fastest = fastestTimeForLake(searchLake);
-        System.out.println(String.format("The fastest time for %s is %f minutes", searchLake, fastest));
-        
+        String searchFastest = stringInput("Enter a lake name to search for the fastest time");
+        double fastest = fastestTimeForLake(searchFastest);
+        System.out.println(String.format("The fastest time for %s is %f minutes", searchFastest, fastest));
+    
+    
+        // Search for the average time for a Lake
+        String searchAverage = stringInput("Enter a lake name to calculate for the average time");
+        double average = fastestTimeForLake(searchAverage);
+        System.out.println(String.format("The fastest time for %s is %f minutes", searchAverage, average));
+    
+    
     }
     
     
@@ -105,6 +112,14 @@ public class Question_2_Lake_Running {
         // If the lake is not in your data structure, return -1 to indicate it was not found.
         
         return 0; // replace with your code
+        
+    }
+    
+    public double averageTimeForLake(String lakeName) {
+        
+        // todo implement this
+        
+        return 0;
         
     }
     

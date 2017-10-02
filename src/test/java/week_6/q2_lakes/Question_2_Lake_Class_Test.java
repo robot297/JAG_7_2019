@@ -32,6 +32,18 @@ public class Question_2_Lake_Class_Test {
     
     
     @Test
+    public void testLakeClassAverageTime() throws Exception {
+        
+        // TODO create an example Lake object
+        
+        // TODO add some example times to the Lake
+        
+        // TODO call method to get the average time, and assert that the correct time is returned
+        
+    }
+    
+    
+    @Test
     public void testLakeClassStoresTimes() throws Exception {
         
         // TODO create an example Lake object
