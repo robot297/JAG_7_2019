@@ -9,7 +9,7 @@ import java.util.ArrayList;
  Modify ITECCourse. Add a variable to store the classroom that the ITECCourse meets in.
  Should this variable be public, protected, or private?
  The variable's name should be 'classroom'
- Add get and set methods (setClassroom and getClassoom) for this variable.
+ Add get and set methods (setClassroom and getClassroom) for this variable.
  
  Add a second ITECCourse constructor so that there are two ways to create ITECCourse objects.
  The second constructor will take 4 arguments: the same 3 as the current constructor, plus a String
