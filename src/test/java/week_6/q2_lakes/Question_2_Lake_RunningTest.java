@@ -116,8 +116,8 @@ public class Question_2_Lake_RunningTest {
         assertEquals("For times 45345, 1121229, the average should be 583287. The lake name should not be case sensitive.", 583287, q2.averageTimeForLake("Superior"), delta);
         
         
-        assertEquals("The average method should return -1 if a lake is not found", -1, q2.fastestTimeForLake("Not There"), delta);
-        assertEquals("The average method should return -1 if a lake is not found", -1, q2.fastestTimeForLake("HHAARRIIEETT"), delta);
+        assertEquals("The average method should return -1 if a lake is not found", -1, q2.averageTimeForLake("Not There"), delta);
+        assertEquals("The average method should return -1 if a lake is not found", -1, q2.averageTimeForLake("HHAARRIIEETT"), delta);
         
     }
     
