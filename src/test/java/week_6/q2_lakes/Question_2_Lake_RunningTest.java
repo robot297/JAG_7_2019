@@ -106,8 +106,8 @@ public class Question_2_Lake_RunningTest {
         
         double delta = 0.1;
         
-        assertEquals("For times 5, 8, 2, the average should be 5. \nThe lake name should not be case sensitive. ", 5, q2.averageTimeForLake("Lake Como"), delta);
-        assertEquals("For times 5, 8, 2, the average should be 5. The lake name should not be case sensitive.", 5, q2.averageTimeForLake("Lake Como"), delta);
+        assertEquals("For times 5, 8, 2, the average should be 5. \nThe lake name should not be case sensitive. ", 5, q2.averageTimeForLake("Como"), delta);
+        assertEquals("For times 5, 8, 2, the average should be 5. The lake name should not be case sensitive.", 5, q2.averageTimeForLake("Como"), delta);
         
         assertEquals("For times 5, 17, the average should be 11. The lake name should not be case sensitive.", 11, q2.averageTimeForLake("Harriet"), delta);
         assertEquals("For times 5, 17, the average should be 11. The lake name should not be case sensitive.", 11, q2.averageTimeForLake("Harriet"), delta);
