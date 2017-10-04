@@ -1,0 +1,12 @@
+Cappuccino;100
+Espresso;14
+Latte;52
+Black tea;18
+Herbal tea;26
+Macchiato;18
+Americano;45
+Cold press;72
+Hot chocolate;33
+Coffee;312
+Chai tea;67
+Mocha;70

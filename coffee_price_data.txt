@@ -1,0 +1,12 @@
+Cappuccino;1.56;3.50
+Espresso;0.95;1.50
+Latte;1.67;3.75
+Black tea;0.35;1.79
+Herbal tea;0.35;2.09
+Macchiato;1.45;2.75
+Americano;0.70;2.65
+Cold press;0.50;2.50
+Hot chocolate;0.65;2.25
+Coffee;0.25;1.65
+Chai tea;1.23;3.50
+Mocha;1.45;3.70
