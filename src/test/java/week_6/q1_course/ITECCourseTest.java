@@ -212,7 +212,7 @@ public class ITECCourseTest {
         Method getclassroom = null, setclassroom = null;
         Field classroom = null;
         try {
-            getclassroom = courseMgr.getMethod("getclassroom");
+            getclassroom = courseMgr.getMethod("getClassroom");
             // No parameters, returns a String
             assertEquals("getclassroom should not take any arguments", getclassroom.getParameterCount(), 0);
             assertEquals("getclassroom should return a String", getclassroom.getReturnType().getSimpleName(), "String");
@@ -222,10 +222,10 @@ public class ITECCourseTest {
         
         try {
             // setclassroom should have one String parameter, returns void
-            setclassroom = courseMgr.getMethod("setclassroom", String.class);
-            assertEquals("getclassroom should return a String", setclassroom.getReturnType(), void.class);
+            setclassroom = courseMgr.getMethod("setClassroom", String.class);
+            assertEquals("getClassroom should return a String", setclassroom.getReturnType(), void.class);
         } catch (NoSuchMethodException ce) {
-            fail("Add a setclassroom() method to ITECCourse.java which takes one String argument");
+            fail("Add a setClassroom() method to ITECCourse.java which takes one String argument");
         }
         
         
