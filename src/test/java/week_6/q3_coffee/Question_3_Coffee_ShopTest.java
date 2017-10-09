@@ -42,8 +42,8 @@ public class Question_3_Coffee_ShopTest {
         String priceData = "Coke;0.1;2\n" +
                 "Sprite;0.2;2.50";
         
-        String salesData = "Coke:4\n" +
-                "Sprite:7";
+        String salesData = "Coke;4\n" +
+                "Sprite;7";
         
         FileWriter writer = new FileWriter(testPriceFilename);
         writer.write(priceData);
