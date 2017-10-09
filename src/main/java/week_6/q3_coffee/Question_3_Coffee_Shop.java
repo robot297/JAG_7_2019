@@ -58,6 +58,8 @@ package week_6.q3_coffee;
  
  And a similar line for each of the drinks. The autograder is looking for this exact format.
  
+ Write the drink data in the *same order* as found in the data files.
+ 
  At the bottom of the file, write the total expenses, total revenue, and total profit for all drinks,
  for example, like this,
  

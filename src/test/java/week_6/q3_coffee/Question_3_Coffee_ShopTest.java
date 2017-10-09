@@ -86,7 +86,7 @@ public class Question_3_Coffee_ShopTest {
             
             reader.close();
             
-            assertEquals("Make sure you write the data in the exact format requested, and verify your math is correct.", expectedSalesReport, data);
+            assertEquals("Make sure you write the data in the exact format requested. \nVerify your math is correct. \nWrite the drink data in the *same order* as found in the data files.\n Click the 'Click to see difference' link near this error message to see the expected file, and your output", expectedSalesReport, data);
             
         } catch (FileNotFoundException f) {
             
