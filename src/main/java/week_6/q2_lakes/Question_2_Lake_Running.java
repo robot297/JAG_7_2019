@@ -82,7 +82,7 @@ public class Question_2_Lake_Running {
     
         // Search for the average time for a Lake
         String searchAverage = stringInput("Enter a lake name to calculate for the average time");
-        double average = fastestTimeForLake(searchAverage);
+        double average = averageTimeForLake(searchAverage);
         System.out.println(String.format("The fastest time for %s is %f minutes", searchAverage, average));
     
     

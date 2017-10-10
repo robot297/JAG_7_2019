@@ -107,13 +107,13 @@ public class Question_2_Lake_RunningTest {
         double delta = 0.1;
         
         assertEquals("For times 5, 8, 2, the average should be 5. \nThe lake name should not be case sensitive. ", 5, q2.averageTimeForLake("Como"), delta);
-        assertEquals("For times 5, 8, 2, the average should be 5. The lake name should not be case sensitive.", 5, q2.averageTimeForLake("Como"), delta);
+        assertEquals("For times 5, 8, 2, the average should be 5. The lake name should not be case sensitive.", 5, q2.averageTimeForLake("COMO"), delta);
         
-        assertEquals("For times 5, 17, the average should be 11. The lake name should not be case sensitive.", 11, q2.averageTimeForLake("Harriet"), delta);
+        assertEquals("For times 5, 17, the average should be 11. The lake name should not be case sensitive.", 11, q2.averageTimeForLake("HaAriEt"), delta);
         assertEquals("For times 5, 17, the average should be 11. The lake name should not be case sensitive.", 11, q2.averageTimeForLake("Harriet"), delta);
         
-        assertEquals("For times 45345, 1121229, the average should be 583287. The lake name should not be case sensitive.", 583287, q2.averageTimeForLake("Superior"), delta);
-        assertEquals("For times 45345, 1121229, the average should be 583287. The lake name should not be case sensitive.", 583287, q2.averageTimeForLake("Superior"), delta);
+        assertEquals("For times 45345, 1121229, the average should be 583287. The lake name should not be case sensitive.", 583287, q2.averageTimeForLake("SUperior"), delta);
+        assertEquals("For times 45345, 1121229, the average should be 583287. The lake name should not be case sensitive.", 583287, q2.averageTimeForLake("superior"), delta);
         
         
         assertEquals("The average method should return -1 if a lake is not found", -1, q2.averageTimeForLake("Not There"), delta);
