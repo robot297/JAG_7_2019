@@ -37,9 +37,17 @@ import static input.InputUtils.*;
  Your program should be able to analyze the data that you have stored, and print your fastest
  time for each lake you ran around. So, for the data above, your program will display something like
  
- Cedar, 43.32
- Harriet, 44.43
- Como, 28.14
+ Cedar, 43.32 minutes
+ Harriet, 44.43 minutes
+ Como, 28.14 minutes
+ 
+ 
+ Your program should also be able to analyze the data that you have stored, and print your average
+ time for each lake you ran around. So, for the data above, your program will display something like
+ 
+ Cedar, 43.74 minutes
+ Harriet, 44.43 minutes
+ Como, 28.14 minutes
  
  Your program should be case-insensitive. So "Como" is the same lake as "como" or "COMO".
  
@@ -72,7 +80,10 @@ public class Question_2_Lake_Running {
         
         // Display fastest time for all lakes
         printFastestTimeForAllLakes();
-        
+    
+        // Display average time for all lakes
+        printAverageTimeForAllLakes();
+    
         
         // Search for the fastest time for a Lake
         String searchFastest = stringInput("Enter a lake name to search for the fastest time");
@@ -95,13 +106,24 @@ public class Question_2_Lake_Running {
         // TODO read data from your data structure, and print the fastest time for each lake.
         // Your output should look something like this
         
-        // Lake Harriet, 50.12 minutes
-        // Como Lake, 45.12 minutes
+        // Harriet, 44.43 minutes
+        // Como, 28.14 minutes
         // ....
         
         
     }
     
+    
+    public void printAverageTimeForAllLakes() {
+        // TODO read data from your data structure, and print the average time for each lake.
+        // Your output should look something like this
+        
+        // Harriet, 46.67 minutes
+        // Como 30.12 minutes
+        // ....
+        
+        
+    }
     
     public double fastestTimeForLake(String lakeName) {
         // TODO find the lake with this name in your Lakes data structure, and use the method defined
