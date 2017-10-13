@@ -4,6 +4,12 @@
  
  **For all questions: if a specific method or variable name is given, use it.**
  
+ **Make sure you add your new java file(s) to your git repository so they are uploaded to GitHub.
+    Otherwise, I won't get all of your code, and your code won't compile for the autograder.**
+
+ To add files to your repository, click 'Yes' when you create a new file and IntelliJ asks if you want to add it to git.
+ If you did not add a file to git at this point, then right-click on that file and select git > add. Commit and push to GitHub and verify you see the file there.
+ 
  **Part 1:**
  
  Modify ITECCourse. Add a variable to store the room that the ITECCourse meets in.

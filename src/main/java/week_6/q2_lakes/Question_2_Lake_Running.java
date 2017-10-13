@@ -55,7 +55,9 @@ import static input.InputUtils.*;
  Optional: You can write some tests for your Lake class. Finish the incomplete tests in
  In test/java/week_6/q2_lakes/Question_2_Lake_RunningTest.java
  
- 
+ Make sure you add your new java file(s) to your git repository so they are uploaded to GitHub.
+ Otherwise, I won't get all of your code, and your code won't compile for the autograder.
+
  */
 
 

@@ -9,7 +9,8 @@ import static org.junit.Assert.*;
  */
 public class Question_2_Lake_Class_Test {
     
-    
+    /*     // Uncomment this code file if you want to run your tests.
+     
     @Test
     public void testLakeClassSavesName() throws Exception {
         
@@ -39,7 +40,6 @@ public class Question_2_Lake_Class_Test {
         // TODO add some example times to the Lake
         
         // TODO call method to get the average time, and assert that the correct time is returned
-        
     }
     
     
@@ -54,6 +54,9 @@ public class Question_2_Lake_Class_Test {
         
         
     }
+    
+    
+    */
     
     
     

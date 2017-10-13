@@ -96,6 +96,11 @@ public class Question_3_Coffee_ShopTest {
     }
     
     
+    @Test
+    public void codeQualityTests() {
+        fail("This test is supposed to fail, the instructor will assess your code and assign the rest of the points");
+    }
+    
     
     
     @Test
