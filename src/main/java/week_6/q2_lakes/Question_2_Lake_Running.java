@@ -74,12 +74,12 @@ public class Question_2_Lake_Running {
     public void running() {
         
         // Get data from user
-        while (moreLakes())  {
+        do {
             String lakeName = stringInput("Enter lake name");
             double runTime = doubleInput("Enter time for running lake " + lakeName);
             addRunTime(lakeName, runTime);
-        }
-        
+        } while (moreLakes());
+    
         // Display fastest time for all lakes
         printFastestTimeForAllLakes();
     
