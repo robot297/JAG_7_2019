@@ -73,9 +73,9 @@ public class Question_2_Lake_RunningTest {
         double delta = 0.000001;
         
         assertEquals("If the times for Lake Como are 5, 6, 3, then 3 should be the fastest. \nThe lake name should not be case sensitive.", 3, q2.fastestTimeForLake("Lake Como"), delta);
-        assertEquals("If the times for Lake Como are 5, 6, 3, then 3 should be the fastest. \nThe lake name should not be case sensitive.", 3, q2.fastestTimeForLake("lake como"), delta);
+        assertEquals("If the times for Lake Como are 5, 6, 3, then 3 should be the fastest. \nThe lake name should not be case sensitive.", 3, q2.fastestTimeForLake("lAke como"), delta);
         
-        assertEquals("If the times for Harriet are 5, 16, the fastest should be 5. \nThe lake name should not be case sensitive.", 5, q2.fastestTimeForLake("Harriet"), delta);
+        assertEquals("If the times for Harriet are 5, 16, the fastest should be 5. \nThe lake name should not be case sensitive.", 5, q2.fastestTimeForLake("harriet"), delta);
         assertEquals("If the times for Harriet are 5, 16, the fastest should be 5. \nThe lake name should not be case sensitive.", 5, q2.fastestTimeForLake("HARrIET"), delta);
         
         assertEquals("If the times for Superior are 45345 and 1121226 then 45345 should be fastest. \nThe lake name should not be case sensitive.", 45345, q2.fastestTimeForLake("SUPERIOR"), delta);
@@ -88,7 +88,6 @@ public class Question_2_Lake_RunningTest {
     
     @Test
     public void testAverageTimeForLake() throws Exception {
-        
         
         Question_2_Lake_Running q2 = new Question_2_Lake_Running();
         
