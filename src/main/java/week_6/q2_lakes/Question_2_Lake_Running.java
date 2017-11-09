@@ -26,7 +26,7 @@ import static input.InputUtils.*;
  Create a Lake class to store all of the data for one lake. Create it in the same directory as this file.
  Add methods to this class to :
  
-  - Adding a new time
+  - Add a new time
   - Find and return the fastest time for this lake
   - Return a list of all of the times for that lake
  
