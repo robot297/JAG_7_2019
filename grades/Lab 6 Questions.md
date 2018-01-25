@@ -7,8 +7,8 @@
  **Make sure you add your new java file(s) to your git repository so they are uploaded to GitHub.
     Otherwise, I won't get all of your code, and your code won't compile for the autograder.**
 
- To add files to your repository, click 'Yes' when you create a new file and IntelliJ asks if you want to add it to git.
- If you did not add a file to git at this point, then right-click on that file and select git > add. Commit and push to GitHub and verify you see the file there.
+ To add files to your repository, click 'Yes' when you create a new file and IntelliJ asks if you want to add it to your git repository.
+ If you said no, or don't see the option - that's no problem. Just right-click on your new file and select git > add. Commit and push to GitHub and verify you see the file there.
  
  **Part 1:**
  
@@ -203,7 +203,7 @@
  
  You should probably write some extra helper methods for the sub-tasks of this problem.
  
- **Optional** You can write your own unit tests for your Drink class methods.
+ **Optional** You can write your own unit tests for your Drink class methods. For example, a Drink object may have a method to calculate the profit from the expense, revenue and cost. You can write a test for this method.
  
  Test and comment your code.
  
