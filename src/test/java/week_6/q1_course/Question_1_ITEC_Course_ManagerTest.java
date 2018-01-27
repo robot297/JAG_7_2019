@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 
 public class Question_1_ITEC_Course_ManagerTest {
     
-    @Test
+    @Test(timeout = 3000)
     public void testAddITECCoursesToArrayList() throws Exception {
         
         Question_1_ITEC_Course_Manager q1 = new Question_1_ITEC_Course_Manager();
@@ -31,7 +31,7 @@ public class Question_1_ITEC_Course_ManagerTest {
         
     }
     
-    @Test
+    @Test(timeout = 3000)
     public void testCalculateTotalFreeSpace() throws Exception {
     
         Question_1_ITEC_Course_Manager q1 = new Question_1_ITEC_Course_Manager();

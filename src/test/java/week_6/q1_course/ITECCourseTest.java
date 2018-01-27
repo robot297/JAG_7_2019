@@ -17,7 +17,7 @@ public class ITECCourseTest {
   
     // Several of these tests should currently pass, they are for the existing code.
     
-    @Test
+    @Test(timeout = 3000)
     public void addStudent() throws Exception {
         
         String n1 = "test1", n2 = "test2", n3 = "test3";
@@ -50,7 +50,7 @@ public class ITECCourseTest {
     
     }
     
-    @Test
+    @Test(timeout = 3000)
     public void removeStudent() throws Exception {
     
         String n1 = "test1", n2 = "test2", n3 = "test3";
@@ -79,7 +79,7 @@ public class ITECCourseTest {
     
     }
     
-    @Test
+    @Test(timeout = 3000)
     public void writeCourseInfo() throws Exception {
         
         PrintUtils.catchStandardOut();
@@ -125,7 +125,7 @@ public class ITECCourseTest {
     
     
     
-    @Test
+    @Test(timeout = 3000)
     public void testFreeSpace() throws Exception {
         
         // Find the freeSpace method. No args, return int.
@@ -156,7 +156,7 @@ public class ITECCourseTest {
     
     
     
-    @Test
+    @Test(timeout = 3000)
     public void testITECCourseManagerConstructors() throws Exception {
         
         Class courseMgr = Class.forName("week_6.q1_course.ITECCourse");
@@ -201,7 +201,7 @@ public class ITECCourseTest {
         
     }
     
-    @Test
+    @Test(timeout = 3000)
     public void testITECCourseManagerGetSet() throws Exception {
         
         // Check for a private classroom variable, and get and set methods variable
@@ -214,10 +214,10 @@ public class ITECCourseTest {
         try {
             getclassroom = courseMgr.getMethod("getClassroom");
             // No parameters, returns a String
-            assertEquals("getclassroom should not take any arguments", getclassroom.getParameterCount(), 0);
-            assertEquals("getclassroom should return a String", getclassroom.getReturnType().getSimpleName(), "String");
+            assertEquals("getClassroom should not take any arguments", getclassroom.getParameterCount(), 0);
+            assertEquals("getClassroom should return a String", getclassroom.getReturnType().getSimpleName(), "String");
         } catch (NoSuchMethodException ce) {
-            fail("Add a getclassroom() method to ITECCourse.java");
+            fail("Add a getClassroom() method to ITECCourse.java.");
         }
         
         try {

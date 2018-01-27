@@ -9,9 +9,9 @@ import static org.junit.Assert.*;
  */
 public class Question_2_Lake_Class_Test {
     
-    /*     // Uncomment this code file if you want to run your tests.
+    /*     // Uncomment this code file if you write tests, and want to run them.
      
-    @Test
+    @Test(timeout = 3000)
     public void testLakeClassSavesName() throws Exception {
         
         //TODO - a simple test. Create a Lake object and set the name, either with a constructor or a set method.
@@ -20,7 +20,7 @@ public class Question_2_Lake_Class_Test {
     }
     
     
-    @Test
+    @Test(timeout = 3000)
     public void testLakeClassFastestTime() throws Exception {
         
         // TODO create an example Lake object
@@ -32,7 +32,7 @@ public class Question_2_Lake_Class_Test {
     }
     
     
-    @Test
+    @Test(timeout = 3000)
     public void testLakeClassAverageTime() throws Exception {
         
         // TODO create an example Lake object
@@ -43,7 +43,7 @@ public class Question_2_Lake_Class_Test {
     }
     
     
-    @Test
+    @Test(timeout = 3000)
     public void testLakeClassStoresTimes() throws Exception {
         
         // TODO create an example Lake object

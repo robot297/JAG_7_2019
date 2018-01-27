@@ -30,7 +30,7 @@ public class Question_3_Coffee_ShopTest {
         testOutputFile = FileUtils.uniqueFilename("temporary_file_for_testing_report.txt");
     }
     
-    @Test
+    @Test(timeout = 3000)
     public void salesReport() throws Exception {
         
         Question_3_Coffee_Shop q3 = new Question_3_Coffee_Shop();
@@ -39,10 +39,12 @@ public class Question_3_Coffee_ShopTest {
         
         //Create some example input files
         
-        String priceData = "Coke;0.1;2\n" +
+        String priceData =
+                "Coke;0.1;2\n" +
                 "Sprite;0.2;2.50";
         
-        String salesData = "Coke;4\n" +
+        String salesData =
+                "Coke;4\n" +
                 "Sprite;7";
         
         FileWriter writer = new FileWriter(testPriceFilename);
@@ -75,13 +77,15 @@ public class Question_3_Coffee_ShopTest {
             
             BufferedReader reader = new BufferedReader(new FileReader(q3.output_report_file));
             
-            String data = "";
+            String data;
             String line = reader.readLine();
+            StringBuilder dataBuilder = new StringBuilder();
             while (line != null) {
-                data = data + line + "\n";
+                dataBuilder.append(line).append("\n");
                 line = reader.readLine();
             }
-            
+            data = dataBuilder.toString();
+    
             data = data.trim();  // remove trailing white space
             
             reader.close();
@@ -96,14 +100,14 @@ public class Question_3_Coffee_ShopTest {
     }
     
     
-    @Test
+    @Test(timeout = 3000)
     public void codeQualityTests() {
         fail("This test is supposed to fail, the instructor will assess your code and assign the rest of the points");
     }
     
     
     
-    @Test
+    @Test(timeout = 3000)
     public void checkMethodsDoNotThrowException() throws Exception {
         //Verify readCoffeeDataFiles and writeReportFile do not throw exceptions
         

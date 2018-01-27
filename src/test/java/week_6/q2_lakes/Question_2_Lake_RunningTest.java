@@ -15,7 +15,7 @@ public class Question_2_Lake_RunningTest {
     double delta = 0.000001;
     
     
-    @Test
+    @Test(timeout = 3000)
     public void testPrintFastestTimeForAllLakes() throws Exception {
         
         Question_2_Lake_Running q5 = new Question_2_Lake_Running();
@@ -52,7 +52,7 @@ public class Question_2_Lake_RunningTest {
         
     }
     
-    @Test
+    @Test(timeout = 3000)
     public void testFastestTimeForLake() throws Exception {
         
         
@@ -86,7 +86,7 @@ public class Question_2_Lake_RunningTest {
     }
     
     
-    @Test
+    @Test(timeout = 3000)
     public void testAverageTimeForLake() throws Exception {
         
         Question_2_Lake_Running q2 = new Question_2_Lake_Running();
@@ -122,8 +122,8 @@ public class Question_2_Lake_RunningTest {
     
     
     
-    @Test
-    public void testaddRunTime() throws Exception {
+    @Test(timeout = 3000)
+    public void testAddRunTime() throws Exception {
     
         Question_2_Lake_Running question_2_lake_running = new Question_2_Lake_Running();
         
