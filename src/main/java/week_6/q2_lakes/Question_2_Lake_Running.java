@@ -8,7 +8,8 @@ import static input.InputUtils.*;
  use Lake objects to store the data.
  
  You are a runner, and you are in training for a race. You'd like to keep track of all of your
- times for your training runs. You only like to run around lakes. Here's some example data,
+ times for your training runs. You only like to run around lakes. Here's some example data.
+ For this program, we'll assume that these are decimal values of minutes, not minutes and seconds.
  
  Cedar, 45.15
  Cedar, 43.32
@@ -37,17 +38,20 @@ import static input.InputUtils.*;
  Your program should be able to analyze the data that you have stored, and print your fastest
  time for each lake you ran around. So, for the data above, your program will display something like
  
+ Your program should be able to analyze the data that you have stored, and print your fastest
+ time for each lake you ran around. So, for the data above, your program will display something like
+ 
  Cedar, 43.32 minutes
  Harriet, 44.43 minutes
  Como, 28.14 minutes
  
- 
  Your program should also be able to analyze the data that you have stored, and print your average
  time for each lake you ran around. So, for the data above, your program will display something like
+ Again, we'll assume that these are decimal values of minutes, so you can figure out the regular average of the numbers.
  
- Cedar, 43.74 minutes
- Harriet, 44.43 minutes
- Como, 28.14 minutes
+ Cedar, 44.24 minutes
+ Harriet, 46.66 minutes
+ Como, 30.13 minutes
  
  Your program should be case-insensitive. So "Como" is the same lake as "como" or "COMO".
  

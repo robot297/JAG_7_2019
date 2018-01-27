@@ -56,13 +56,11 @@
 
 ### Problem 2: Lakes
 
- This is the same question from Lab 4, but for this question, you'll refactor your code to
- use Lake objects to store the data.
+ This is the same question from Lab 4, but for this question, you'll refactor your code to use Lake objects to store the data.
  
- You are a runner, and you are in training for a race. You'd like to keep track of all of your
- times for your training runs. You only like to run around lakes. Here's some example data,
- 
- 
+ You are a runner, and you are in training for a race. You'd like to keep track of all of your times for your training runs. You only like to run around lakes. Here's some example data.
+ For this program, we'll assume that these are decimal values of minutes, not minutes and seconds, and the math will be more straightforward. 
+  
  ```
  Cedar, 45.15
  Cedar, 43.32
@@ -73,41 +71,41 @@
  Como, 28.14
  ```
  
- 
- Write a program that enables you to enter the names of lakes and times, and store all of this
- data.
- 
- You'll need to save every time entered for each lake.
- 
- Create a Lake class to store all of the data for one lake. Create it in the same directory as this file.
- Add methods to this class to :
- 
-  - Add a new time
-  - Find and return the fastest time for this lake
-  - Return a list of all of the times for that lake
- 
- Save all of your Lake objects in a list or HashMap, so your program has a reference to every Lake.
- 
- Your program should still work if you started running around another lake too (e.g. Lake of the Isles, or Lake Phalen).
- 
- Your program should be able to analyze the data that you have stored, and print your fastest
- time for each lake you ran around. So, for the data above, your program will display something like
- 
+
+Write a program that enables you to enter the names of lakes and times, and store all of this data.
+
+You'll need to save every time entered for each lake.
+
+Create a Lake class to store all of the data for one lake. Create it in the same directory as this file.
+Add methods to this class to :
+
+- Add a new time
+- Find and return the fastest time for this lake
+- Return a list of all of the times for that lake
+
+Save all of your Lake objects in a list or HashMap, so your program has a reference to every Lake.
+
+Your program should still work if you started running around another lake too (e.g. Lake of the Isles, or Lake Phalen).
+
+Your program should be able to analyze the data that you have stored, and print your fastest
+time for each lake you ran around. So, for the data above, your program will display something like
+
  ```
  Cedar, 43.32 minutes
  Harriet, 44.43 minutes
  Como, 28.14 minutes
  ```
  
+
+Your program should also be able to analyze the data that you have stored, and print your average time for each lake you ran around. So, for the data above, your program will display something like this.
+Again, we'll assume that these are decimal values of minutes, so you can figure out the regular average of the numbers. 
  
-  Your program should also be able to analyze the data that you have stored, and print your average
-  time for each lake you ran around. So, for the data above, your program will display something like
-  
+ 
   
   ```
-  Cedar, 43.74 minutes
-  Harriet, 44.43 minutes
-  Como, 28.14 minutes
+  Cedar, 44.24 minutes
+  Harriet, 46.66 minutes
+  Como, 30.13 minutes
   ```
   
  Your program should be case-insensitive. So "Como" is the same lake as "como" or "COMO".
@@ -120,15 +118,12 @@
 
 ### Question 3: Coffee Shop
 
- This is the same question as week 5, but you'll refactor your program to
- use Drink objects.
+ This is the same question as week 5, but you'll refactor your program to use Drink objects.
  
  Write a program that creates a sales report for a coffee shop.
  The coffee shop will use this at the end of every day to calculate sales, expenses, and profit.
  
- The coffee shop sells 12 different drinks. The name of each drink, the price the shop
- charges the customer, and how much it costs to make each drink, are saved in the file
- coffee_price_data.txt. It's in the root directory of this project.
+ The coffee shop sells 12 different drinks. The name of each drink, the price the shop charges the customer, and how much it costs to make each drink, are saved in the file coffee_price_data.txt. It's in the root directory of this project.
  
  The data is in the format
  
@@ -158,19 +153,14 @@
  
  Which means that the coffee shop sold 100 cappuccino drinks.
  
- Your program should read this data from coffee_price_data.txt, and coffee_sales_data.txt, and
- store it all of the data for each drink in one Drink object. One Drink object
- should store that drink's name, price, number sold, cost to make one drink, price one drink sold for.
+ Your program should read this data from coffee_price_data.txt, and coffee_sales_data.txt, and store it all of the data for each drink in one Drink object. One Drink object should store that drink's name, price, number sold, cost to make one drink, price one drink sold for.
  
- A Drink object should be able to calculate the total expenses to make all the drinks of that type sold;
- the total price all of that drink of that type sold for, and profit for that type of drink.
+ A Drink object should be able to calculate the total expenses to make all the drinks of that type sold; the total price all of that drink of that type sold for, and profit for that type of drink.
  
  You should deal with any file-related exceptions properly.
  
- Once you have gathered all the data, generate a report that will be written out to a new file called
- daily_sales_report.txt. For each drink, record the number of drinks sold, the total that it cost to
- make the total quantity of those drinks (expenses), and the total amount (revenue) spent by
- customers on that drink.
+ Once you have gathered all the data, generate a report that will be written out to a new file called `daily_sales_report.txt`. 
+ For each drink, record the number of drinks sold, the total that it cost to make the total quantity of those drinks (expenses), and the total amount (revenue) spent by customers on that drink.
  
  So, for example, if the coffee shop sold 100 cappuccinos today, you'll write a line that says
  
@@ -198,8 +188,7 @@
  
  You should use try-with-resources exception handling for both file reading, and file writing.
  
- Use methods to organize your code. The autograder will call the salesReport() method, and will examine
- the output file your program creates.   The instructor will assess the quality of your code and solution.
+ Use methods to organize your code. The autograder will call the salesReport() method, and will examine the output file your program creates.   The instructor will assess the quality of your code and solution.
  
  You should probably write some extra helper methods for the sub-tasks of this problem.
  
