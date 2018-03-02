@@ -30,6 +30,7 @@ import static input.InputUtils.*;
   - Add a new time
   - Find and return the fastest time for this lake
   - Return a list of all of the times for that lake
+  - Calculate the average time for all the runs for this lake
  
  Save all of your Lake objects in a list or HashMap, so your program has a reference to every Lake.
  
@@ -145,7 +146,7 @@ public class Question_2_Lake_Running {
     
     public double averageTimeForLake(String lakeName) {
         
-        // todo implement this
+        // todo implement this. Return -1 if the lake is not found.
         
         return 0;
         
