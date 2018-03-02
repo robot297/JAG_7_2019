@@ -45,19 +45,55 @@ public class Question_2_Lake_RunningTest {
          In any order
         */
         
-        assertTrue(Pattern.matches(".*como.*3.*", out));
-        assertTrue(Pattern.matches(".*harriet.*5.*", out));
-        assertTrue(Pattern.matches(".*superior.*45345.*", out));
+        String msg = "This test adds times for Como (fastest time = 3), Harriet (5) and Superior. (45345). Your output was: \n"+
+                out
+                + " \nYour output did not include the expected data, name and/or time, for lake ";
+        assertTrue(msg + "Como.", Pattern.matches(".*como.*3.*", out));
+        assertTrue(msg + "Harriet.", Pattern.matches(".*harriet.*5.*", out));
+        assertTrue(msg + "Superior.", Pattern.matches(".*superior.*45345.*", out));
         
         
     }
     
+    
+    @Test(timeout = 3000)
+    public void testPrintAverageTimeForAllLakes() throws Exception {
+        
+        Question_2_Lake_Running q5 = new Question_2_Lake_Running();
+        
+        q5.addRunTime("Como", 1);
+        q5.addRunTime("Como", 3);   // Avg = 2
+        
+        q5.addRunTime("Harriet", 5);
+        q5.addRunTime("HaRRiet", 7);   // Avg = 6
+        
+        PrintUtils.catchStandardOut();
+        
+        q5.printFastestTimeForAllLakes();
+        
+        String out = PrintUtils.resetStandardOut();
+        out = out.replace("\n", " ").toLowerCase();
+        out = out.replace("\r", " ").toLowerCase();
+        
+        /* Check that out contains
+         como .... 2 ... harriet ... 6
+         In any order
+        */
+        
+        String msg = "This test adds times for Como (average time = 3), Harriet (5) and Superior. (45345). Your output was: \n"+
+                out
+                + " \nYour output did not include the expected data, name and/or time, for lake ";
+        assertTrue(msg + "Como.", Pattern.matches(".*como.*2.*", out));
+        assertTrue(msg + "Harriet.", Pattern.matches(".*harriet.*6.*", out));
+        
+    }
+    
+    
+    
     @Test(timeout = 3000)
     public void testFastestTimeForLake() throws Exception {
         
-        
         Question_2_Lake_Running q2 = new Question_2_Lake_Running();
-        
         
         q2.addRunTime("Lake Como", 5);
         q2.addRunTime("Lake Como", 6);
@@ -114,7 +150,6 @@ public class Question_2_Lake_RunningTest {
         assertEquals("For times 45345, 1121229, the average should be 583287. The lake name should not be case sensitive.", 583287, q2.averageTimeForLake("SUperior"), delta);
         assertEquals("For times 45345, 1121229, the average should be 583287. The lake name should not be case sensitive.", 583287, q2.averageTimeForLake("superior"), delta);
         
-        
         assertEquals("The average method should return -1 if a lake is not found", -1, q2.averageTimeForLake("Not There"), delta);
         assertEquals("The average method should return -1 if a lake is not found", -1, q2.averageTimeForLake("HHAARRIIEETT"), delta);
         
@@ -125,22 +160,19 @@ public class Question_2_Lake_RunningTest {
     @Test(timeout = 3000)
     public void testAddRunTime() throws Exception {
     
+        String msg = "This test will fail until you have correctly implemented fastestTimeForLake. \nIt adds example times and queries for the fastest time.";
         Question_2_Lake_Running question_2_lake_running = new Question_2_Lake_Running();
-        
         
         question_2_lake_running.addRunTime("Como", 5);
         question_2_lake_running.addRunTime("CoMo", 2);
         question_2_lake_running.addRunTime("COMO", 3);    // Should all be considered the same lake.
         
-        
-        assertEquals(2, question_2_lake_running.fastestTimeForLake("Como"), delta);
-        assertEquals(2, question_2_lake_running.fastestTimeForLake("CoMo"), delta);
-        assertEquals(2, question_2_lake_running.fastestTimeForLake("cOMO"), delta);
-        assertEquals(2, question_2_lake_running.fastestTimeForLake("coMO"), delta);
-        
+        assertEquals(msg, 2, question_2_lake_running.fastestTimeForLake("Como"), delta);
+        assertEquals(msg, 2, question_2_lake_running.fastestTimeForLake("CoMo"), delta);
+        assertEquals(msg, 2, question_2_lake_running.fastestTimeForLake("cOMO"), delta);
+        assertEquals(msg, 2, question_2_lake_running.fastestTimeForLake("coMO"), delta);
         
     }
-    
     
 }
 
