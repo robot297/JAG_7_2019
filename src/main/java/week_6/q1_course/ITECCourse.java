@@ -3,29 +3,30 @@ package week_6.q1_course;
 import java.util.ArrayList;
 
 /**
- * Stores data about an ITECCourse.
- *
+ * Stores data about one ITECCourse.
  */
+
 public class ITECCourse {
     
     // Data that an ITECCourse object needs to store
     // It's often best to make instance variables private
+    
     private String name;
     private int code;
     private int maxStudents;
     
-    
+    // A list of the students enrolled
     private ArrayList<String> students;
     
-    // TODO Part 1 add a variable called classroom to store the classroom number a ITECCourse meets in
+    // TODO Part 1 add a String variable called classroom to store the classroom number a ITECCourse meets in
     // TODO add get and set methods for the classroom variable
-    
     
     
     // Get and set methods for private variables
     // Only provide if other classes will need to modify these variables!
-    // Common to only provide get methods to read the values, or only
+    // It's common to only provide get methods to read the values, or only
     // methods for a subset of all of the class variables.
+    
     public int getMaxStudents() {
         return maxStudents;
     }

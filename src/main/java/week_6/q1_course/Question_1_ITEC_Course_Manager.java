@@ -6,7 +6,7 @@ import java.util.ArrayList;
  
  Part 1:
  
- Modify ITECCourse. Add a variable to store the classroom that the ITECCourse meets in.
+ Modify ITECCourse. Add a String variable to store the classroom that the ITECCourse meets in.
  Should this variable be public, protected, or private?
  The variable's name should be 'classroom'
  Add get and set methods (setClassroom and getClassroom) for this variable.
@@ -16,7 +16,7 @@ import java.util.ArrayList;
  to specify the classroom when you create an ITECCourse object. The classroom should be the 4th argument.
  
  Test your code by creating a ITECCourse object for this class:
- Name: Info Tech Concepts, code 1100, max students 30, classroom T3050.
+ Name: "Info Tech Concepts", code 1100, max students 30, classroom "T3050".
  Enroll Miriam, and Nils, and Oprah.
  
  
