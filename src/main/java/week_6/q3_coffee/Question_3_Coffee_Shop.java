@@ -1,8 +1,6 @@
 package week_6.q3_coffee;
 
 /**
- *
- *
  This is the same question as week 5, but you'll refactor your program to
  use Drink objects.
  
@@ -76,6 +74,10 @@ package week_6.q3_coffee;
  
  Test and comment your code.
  
+ Make sure you add your new java file(s) to your git repository so they are uploaded to GitHub.
+ Otherwise, I won't get all of your code, and your code won't compile for the autograder.
+ 
+ 
  */
 
 public class Question_3_Coffee_Shop {
@@ -96,7 +98,7 @@ public class Question_3_Coffee_Shop {
         
         // Suggested outline of program.
         
-        // You may (and probably should) add more methods if necessary.
+        // You may (and probably should) add more methods as necessary.
         
         Object allDrinkData = readCoffeeDataFiles(price_data_file, sales_data_file);  // TODO replace Object with the type of your data structure
         writeReportFile(allDrinkData, output_report_file);

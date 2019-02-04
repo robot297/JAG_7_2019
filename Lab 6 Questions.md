@@ -1,14 +1,15 @@
 # Lab 6
 
-### Problem 1: ITEC Courses
- 
- **For all questions: if a specific method or variable name is given, use it.**
+**For all questions: if a specific method or variable name is given, use it.**
  
  **Make sure you add your new java file(s) to your git repository so they are uploaded to GitHub.
     Otherwise, I won't get all of your code, and your code won't compile for the autograder.**
 
  To add files to your repository, click 'Yes' when you create a new file and IntelliJ asks if you want to add it to your git repository.
- If you said no, or don't see the option - that's no problem. Just right-click on your new file and select git > add. Commit and push to GitHub and verify you see the file there.
+ If you said no, or don't see the option - that's no problem. Just right-click on your new file and select Git > add. Commit and push to GitHub and verify you see the file there.
+ 
+
+### Problem 1: ITEC Courses
  
  **Part 1:**
  
@@ -52,7 +53,6 @@
  At the end of testCourseManagerMethods(), loop over all of the ITECCourse objects and
  print the name of each ITECCourse, and the number of free spaces in each ITECCourse.
  
-
 
 ### Problem 2: Lakes
 
@@ -175,7 +175,7 @@ Again, we'll assume that these are decimal values of minutes, so you can figure 
  `
  
  
- And a similar line for each of the drinks. The autograder is looking for this exact format.
+ And a similar line for each of the drinks. The autograder is looking for this *exact* format.
  
  Write the drink data in the *same order* as found in the data files. 
 
