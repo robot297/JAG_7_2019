@@ -69,7 +69,7 @@ public class Question_2_Lake_RunningTest {
         
         PrintUtils.catchStandardOut();
         
-        q5.printFastestTimeForAllLakes();
+        q5.printAverageTimeForAllLakes();
         
         String out = PrintUtils.resetStandardOut();
         out = out.replace("\n", " ").toLowerCase();
