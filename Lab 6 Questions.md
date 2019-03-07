@@ -41,7 +41,7 @@
  
  **Part 3:**
  
- Modify ITECCourseManager testCourseManagerMethods() to add all of your ITECCourse objects to the
+ Modify ITECCourseManager useCourseManagerMethods() to add all of your ITECCourse objects to the
  allITECCourses ArrayList. You should have 4 (or more) ITECCourse objects.
  
  Finish the calculateTotalFree space method. It should add up all of the free space in all of the courses
