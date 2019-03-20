@@ -25,9 +25,9 @@ public class Question_3_Coffee_ShopTest {
     
     @Before
     public void createFilenames() {
-        testPriceFilename = FileUtils.uniqueFilename("temporary_file_for_testing_test_price_data");
-        testSalesFilename = FileUtils.uniqueFilename("temporary_file_for_testing_test_sales_data.txt");
-        testOutputFile = FileUtils.uniqueFilename("temporary_file_for_testing_report.txt");
+        testPriceFilename = FileUtils.uniqueFilename("price_data");
+        testSalesFilename = FileUtils.uniqueFilename("sales_data");
+        testOutputFile = FileUtils.uniqueFilename("report");
     }
     
     @Test(timeout = 3000)
