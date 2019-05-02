@@ -9,7 +9,7 @@
     {
       "question" : 2,
       "java_file": "q2_lakes.Question_2_Lake_Running",
-      "test_files": ["week_6.q2_lakes.Question_2_Lake_RunningTest", "week_6.q2_lakes.Question_2_Lake_Class_Test"],
+      "test_files": ["week_6.q2_lakes.Question_2_Lake_RunningTest"],
       "points": 8
     },
     {
