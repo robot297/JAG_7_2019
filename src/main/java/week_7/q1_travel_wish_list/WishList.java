@@ -1,15 +1,16 @@
 package week_7.q1_travel_wish_list;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import static input.InputUtils.stringInput;
 import static input.InputUtils.yesNoInput;
 
 /**
-
+Program to create and display a list of places a user wishes to travel to.
  */
+
+
 public class WishList {
     
     public static void main(String[] args) {
