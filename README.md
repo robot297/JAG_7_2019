@@ -1,4 +1,4 @@
-## Java Lab 6, First Objects
+## Java Lab 7, First Objects
 
 ### ITEC Courses, Lakes, Coffee Shop
 
