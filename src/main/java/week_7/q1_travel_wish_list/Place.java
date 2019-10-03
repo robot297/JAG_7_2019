@@ -11,13 +11,14 @@ public class Place /* TODO make Place objects Comparable, so they can be sorted 
     *
     * TODO finish this class
     *
-    * A place object will need three private fields:
-    *    A String name (for example, Hawaii)
-    *    A String reason (a reason for visiting, for example, to go surfing)
-    *    A Date created (when the Place object was created.
+    * A place object will need three private fields, with these names:
+    *    name: A String for the place name (for example, Hawaii)
+    *    reason: A String reason (a reason for visiting, for example, to go surfing)
+    *    created: A Date created (when the Place object was created.
     *
-    * Create get and set methods for all three fields. Remember that
-    * IntelliJ can generate these methods for you.
+    * Create get and set methods for all three fields. These will have names like
+    * getName, setName, getReason, setReason, getCreated, setCreated.
+    * Remember that IntelliJ can generate these methods for you.
     *
     * In this class, you'll need a constructor that takes two arguments, the
     * name, and the reason.
