@@ -13,9 +13,8 @@ import static input.InputUtils.yesNoInput;
 public class WishList {
     
     public static void main(String[] args) {
-    
-        System.out.println(new Date());
-        // TODO modify this line so the List stores Place objects
+
+        // TODO modify this line so the wishList List stores Place objects
         List wishList = new ArrayList<>();
         
         do {
@@ -24,6 +23,7 @@ public class WishList {
             String reason = stringInput("Why do you want to visit " + name + "?");
             
             // TODO create a new Place object with the name, and reason
+            // The Place object should calculate the date created and store that.
             // TODO add the new Place object to the wishList
             
         } while (yesNoInput("More places to add to your wish list?"));
@@ -45,7 +45,9 @@ public class WishList {
     public static void displayPlacesInNameOrder(List<Place> places) {
         
         // TODO
-        //  sort the List of Place objects and print each place
+        //  Sort the List of Place objects, places should be sorted in name order.
+        //  the sort should be case insensitive. 'hawaii' should be before 'Rome'.
+        //  Print each place, one per line
         //  Don't print anything else
         //  Make sure you've made Place Comparable, and it has a toString method
         
