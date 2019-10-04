@@ -106,7 +106,6 @@ public class WishListTest {
         
         Date now = new Date();
         Place p = (Place) c.newInstance("example", "because");
-    
         
         Field name = placeClass.getDeclaredField("name");
         name.setAccessible(true);
@@ -119,9 +118,9 @@ public class WishListTest {
     
         assertEquals("Constructor should set the name field.", "example", name.get(p));
     
-        assertEquals("Constructor should set the reason field.", "example", reason.get(p));
+        assertEquals("Constructor should set the reason field.", "because", reason.get(p));
     
-        assertEquals("Constructor should set the reason field.", new Date().toString(), created.get(p).toString());
+        assertEquals("Constructor should create the data for the created field.", new Date().toString(), created.get(p).toString());
     }
     
     
