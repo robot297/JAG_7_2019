@@ -56,22 +56,22 @@ public class WishListTest {
         assertEquals(String.class, getName.getReturnType());
         
         Method setName = placeClass.getMethod("setName", String.class);
-        assertEquals(Void.class, setName.getReturnType());
+        assertEquals(Void.TYPE, setName.getReturnType());
     
         Method getReason = placeClass.getMethod("getReason");
         assertEquals(String.class, getReason.getReturnType());
         
         Method setReason = placeClass.getMethod("setReason", String.class);
-        assertEquals(Void.class, setReason.getReturnType());
+        assertEquals(Void.TYPE, setReason.getReturnType());
     
         Method getCreated = placeClass.getMethod("getCreated");
         assertEquals(Date.class, getCreated.getReturnType());
     
         Method setCreated = placeClass.getMethod("setCreated", Date.class);
-        assertEquals(Void.class, setCreated.getReturnType());
+        assertEquals(Void.TYPE, setCreated.getReturnType());
     
         Constructor[] cons = placeClass.getConstructors();
-        Place p = (Place) cons[1].newInstance("example", "because", new Date());
+        Place p = (Place) cons[0].newInstance("example", "because");
         
         setName.invoke(p, "California");
         String name = (String) getName.invoke(p);
@@ -94,10 +94,10 @@ public class WishListTest {
         Constructor[] cons = placeClass.getConstructors();
         assertEquals(1, cons.length);
         Constructor c = cons[0];
-        assertArrayEquals(new Class[]{String.class, String.class, Date.class}, c.getParameterTypes());
+        assertArrayEquals(new Class[]{String.class, String.class}, c.getParameterTypes());
         
         Date now = new Date();
-        Place p = (Place) c.newInstance("example", "because", now);
+        Place p = (Place) c.newInstance("example", "because");
     
         
         Method getName = placeClass.getMethod("getName");
@@ -120,9 +120,8 @@ public class WishListTest {
     @Test(timeout=3000)
     public void placeIsComparable() throws Exception{
     
-        int m = placeClass.getModifiers();
         Class comparable = Comparable.class;
-        assertTrue(placeClass.isAssignableFrom(comparable));
+        assertTrue(comparable.isAssignableFrom(placeClass));
     
         Method compare = placeClass.getMethod("compareTo", Place.class);
     
@@ -130,17 +129,20 @@ public class WishListTest {
         assertEquals(1, cons.length);
         Constructor c = cons[0];
     
-        Place firstPlace = (Place) c.newInstance("arizona", "because", new Date());
-        Place secondPlace = (Place) c.newInstance("Rome", "why", new Date(10000));
-        Place thirdPlace =  (Place) c.newInstance("Zambia", "reason", new Date());
+        Place firstPlace = (Place) c.newInstance("arizona", "because");
+        Place secondPlace = (Place) c.newInstance("Rome", "why");
+        Place thirdPlace =  (Place) c.newInstance("Zambia", "reason");
         
-        assertEquals(-1, compare.invoke(firstPlace, secondPlace));
-        assertEquals(1, compare.invoke(firstPlace, secondPlace));
+        assertTrue((int)compare.invoke(firstPlace, secondPlace) < 0);
+        assertTrue((int)compare.invoke(secondPlace, firstPlace) > 0);
         assertEquals(0, compare.invoke(firstPlace, firstPlace));
+        assertEquals(0, compare.invoke(secondPlace, secondPlace));
+        assertEquals(0, compare.invoke(thirdPlace, thirdPlace));
     
-        assertEquals(0, compare.invoke(secondPlace, firstPlace));
-        assertEquals(0, compare.invoke(thirdPlace, firstPlace));
-        assertEquals(0, compare.invoke(firstPlace, secondPlace));
+        assertTrue((int)compare.invoke(secondPlace, thirdPlace) < 0);
+        assertTrue((int)compare.invoke(thirdPlace, firstPlace) > 0);
+        assertTrue((int)compare.invoke(firstPlace, thirdPlace) < 0);
+        
         
     
     }
@@ -155,10 +157,10 @@ public class WishListTest {
     
         Date now = new Date();
         
-        Place firstPlace = (Place) c.newInstance("arizona", "because", now);
+        Place firstPlace = (Place) c.newInstance("arizona", "because");
         
         Method toString = placeClass.getMethod("toString");
-        String outString = (String) toString.invoke(placeClass);
+        String outString = (String) toString.invoke(firstPlace);
         
         String expected = String.format("Place to visit: %s. Reason: %s. Date created: %s", "arizona", "because", now.toString());
         assertEquals(expected, outString);
@@ -195,12 +197,10 @@ public class WishListTest {
         
         PrintUtils.catchStandardOut();
     
-        Date d1 = new Date();
-        Date d2 = new Date(10000);
-        Date d3 = new Date(100000000);
-        Place firstPlace = (Place) c.newInstance("Zambia", "reason", d1);
-        Place secondPlace = (Place) c.newInstance("Rome", "why", d2);
-        Place thirdPlace = (Place) c.newInstance("arizona", "because", d3);
+        Date d = new Date();
+        Place firstPlace = (Place) c.newInstance("Zambia", "reason");
+        Place secondPlace = (Place) c.newInstance("Rome", "why");
+        Place thirdPlace = (Place) c.newInstance("arizona", "because");
     
         ArrayList<Place> places = new ArrayList<>();
         places.add(firstPlace); places.add(secondPlace); places.add(thirdPlace);
@@ -209,9 +209,9 @@ public class WishListTest {
         
         String out = PrintUtils.resetStandardOut().replace("\r", "").trim();
         
-        String expected = String.format("Place to visit: %s. Reason: %s. Date created: %s", "arizona", "because", d3.toString()) + "\n" +
-                String.format("Place to visit: %s. Reason: %s. Date created: %s", "Rome", "why", d2.toString()) + "\n" +
-                String.format("Place to visit: %s. Reason: %s. Date created: %s", "Zambia", "reason", d1.toString());
+        String expected = String.format("Place to visit: %s. Reason: %s. Date created: %s", "arizona", "because", d.toString()) + "\n" +
+                String.format("Place to visit: %s. Reason: %s. Date created: %s", "Rome", "why", d.toString()) + "\n" +
+                String.format("Place to visit: %s. Reason: %s. Date created: %s", "Zambia", "reason", d.toString());
         
         assertEquals(expected, out);
     }

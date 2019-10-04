@@ -1,11 +1,12 @@
 package week_7.q1_travel_wish_list;
 
+import java.util.Date;
+
 /**
  * Represents one place in a wish list of places to travel to.
  */
 
 public class Place /* TODO make Place objects Comparable, so they can be sorted */  {
-    
     
     /*
     *
@@ -20,10 +21,9 @@ public class Place /* TODO make Place objects Comparable, so they can be sorted 
     * getName, setName, getReason, setReason, getCreated, setCreated.
     * Remember that IntelliJ can generate these methods for you.
     *
-    * In this class, you'll need a constructor that takes two arguments, the
-    * name, and the reason.
-    *
-    * The constructor can set the Date created.
+    * In this class, you'll need a *public* constructor that takes two arguments,
+    * the name, and the reason.
+    * The constructor can create and set the Date created.
     *
     * Place objects need to be sorted by name.
     * You'll need to make Place implement Comparable, so one Place can

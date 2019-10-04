@@ -39,7 +39,6 @@ public class WishList {
         // TODO create a new Place object with the given placeName and reason
         
         return null;  // TODO change this to return the new Place
-    
     }
     
     
