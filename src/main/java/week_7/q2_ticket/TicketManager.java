@@ -26,6 +26,7 @@ public class TicketManager {
             int userChoice = ticketUI.showMenuGetChoice();
 
             // TODO Problem 3: add the two new options to this switch statement
+            
             switch (userChoice) {
                 case TicketUI.ADD_TICKET:
                     menuOptionAddTicket();

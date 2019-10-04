@@ -3,12 +3,15 @@ package week_7.q2_ticket;
 import java.util.LinkedList;
 
 
-/*
+/**
+ *
  * Storage for Resolved Ticket objects.
- * Implemented as a Singleton - there can only ever be one TicketStore.
- * If you want to work with the TicketStore, call TicketStore.getInstance()
+ * Implemented as a Singleton - there can only ever be one ResolvedTicketStore.
+ * If you want to work with the ResolvedTicketStore,, call ResolvedTicketStore.getInstance()
  *
  * You don't need to modify this class.
+ *
+ * You will need to call the addTicket method.
 * */
 
 
