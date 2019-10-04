@@ -9,7 +9,13 @@ import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 import test_utils.PrintUtils;
 
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.lang.reflect.Field;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Date;
 
 import static org.easymock.EasyMock.anyString;
@@ -360,6 +366,31 @@ public class TicketManagerTest {
     @Test(timeout = 3000)
     public void ticketManagerDoesNotUseInputUtilsOrSystemOutPrintln() {
     
+//        Path projectPath = Paths.get(System.getProperties()
+        String projectRoot = Paths.get("").toString();
+        Path ticketFilePath = Paths.get(projectRoot,
+                "src", "main", "java", "week_7", "q2_ticket", "TicketManager.java");
+        
+        try {
+            
+            byte[] bytes = Files.readAllBytes(ticketFilePath);
+            String allFileText = new String(bytes);
+            
+            String msg = "TicketManager should not use any InputUtils, System.out.print calls. " +
+                    "\nAll user input and output should be delegated to TicketUI. " +
+                    "\nCall the ticketUI methods to print data, and to ask the user for input. ";
+            
+            assertFalse(msg, allFileText.contains("InputUtils"));
+            assertFalse(msg, allFileText.contains("intInput"));
+            assertFalse(msg, allFileText.contains("stringInput"));
+            assertFalse(msg, allFileText.contains("System.out.print"));
+            assertFalse(msg, allFileText.contains("Scanner"));
+            
+        } catch (IOException e) {
+            fail("If you have moved or renamed TicketManager.java, or any of the directories in the project, please restore the original location and names. \nIf not, please push your code to GitHub and report this test fail to Clara. ");
+        }
+        
+        
     }
     
 }

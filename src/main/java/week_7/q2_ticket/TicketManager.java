@@ -51,8 +51,10 @@ public class TicketManager {
     
     
     private void menuOptionAddTicket() {
-        // Get ticket data from user interface
+        
+        // Get ticket data. Use ticketUI method to ask for data.
         Ticket newTicket = ticketUI.getNewTicketInfo();
+        
         // Add to the ticket store
         ticketStore.add(newTicket);
         ticketUI.userMessage("Ticket added to the ticket queue");
@@ -90,6 +92,7 @@ public class TicketManager {
         ticketUI.displayTickets(allTickets);
     }
 
+    
     /* Ask user for a search term, display all tickets matching that term */
     protected void menuOptionSearchByDescription() {
 
@@ -108,7 +111,7 @@ public class TicketManager {
     protected void menuOptionDeleteTicketByDescription() {
 
         // TODO Problem 7: implement this method.
-        // Ask user for search term e.g. "server"
+        // Ask user for search term e.g. "server". Use TicketUI to ask the question.
 
         // If there are matching tickets, use TicketUI to ask user which ticket ID to delete;
         // call deleteTicketById(ticketID) to delete the ticket.
