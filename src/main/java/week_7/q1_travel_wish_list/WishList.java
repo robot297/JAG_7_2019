@@ -23,9 +23,11 @@ public class WishList {
             String name = stringInput("Enter the name of the place");
             String reason = stringInput("Why do you want to visit " + name + "?");
             
-            // TODO create a new Place object with the name, and reason
-            // The Place object should calculate the date created and store that.
-            // TODO add the new Place object to the wishList
+            // TODO use the newPlace method to
+            //  create a new Place object with the name, and reason
+            // The Place object's constructor should calculate the date created and store that.
+            
+            // TODO add the new Place object, returned by newPlace, to the wishList
             
         } while (yesNoInput("More places to add to your wish list?"));
         
