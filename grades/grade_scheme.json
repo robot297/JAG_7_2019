@@ -2,21 +2,20 @@
   "questions" : [
     {
       "question" : 1,
-      "java_file": "q1_course.Question_1_ITEC_Course_Manager",
-      "test_files": [ "week_7.q1_course.Question_1_ITEC_Course_ManagerTest", "week_7.q1_course.ITECCourseTest" ],
-      "points": 4
+      "java_file": "q1_travel_wish_list.WishList",
+      "test_files": [ "week_7.q1_travel_wish_list.WishListTest" ],
+      "points": 5
     },
     {
       "question" : 2,
-      "java_file": "q2_lakes.Question_2_Lake_Running",
-      "test_files": ["week_7.q2_lakes.Question_2_Lake_RunningTest"],
-      "points": 8
-    },
-    {
-      "question" : 3,
-      "java_file": "q3_coffee.Question_3_Coffee_Shop",
-      "test_files": ["week_7.q3_coffee.Question_3_Coffee_ShopTest"],
-      "points": 8
+      "java_file": "q2_ticket.TicketManager",
+      "test_files": [
+        "week_7.q2_ticket.TicketDataStoreTest",
+        "week_7.q2_ticket.TicketManagerTest",
+        "week_7.q2_ticket.TicketTest",
+        "week_7.q2_ticket.TicketUITest"
+        ],
+      "points": 15
     }
   ]
 }

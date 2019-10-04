@@ -1,6 +1,6 @@
 ## Java Lab 7, First Objects
 
-### ITEC Courses, Lakes, Coffee Shop
+### Travel Wish List, Support Ticket Manager
 
 Instructions:
 
