@@ -39,6 +39,9 @@ public class TicketManagerTest {
     }
     
     
+
+    
+    
     @Test(timeout=3000)
     public void e2eAddNewTicket() {
         
@@ -234,13 +237,12 @@ public class TicketManagerTest {
         
         int option = 0;
         try {
-            Field searchByDescription = TicketUI.class.getDeclaredField("DELETE_BY_TICKET_DESCRIPTION");
+            Field searchByDescription = TicketUI.class.getDeclaredField("DELETE_BY_DESCRIPTION");
             searchByDescription.setAccessible(true);
             option = (int) searchByDescription.get(null);
         } catch (NoSuchFieldException|IllegalAccessException|ClassCastException e) {
             fail("Create a static DELETE_BY_TICKET_DESCRIPTION variable in TicketUI and use it to create and show the menu. " + e);
         }
-        
         
         mockStatic(InputUtils.class);
         expect(InputUtils.intInput(anyString())).andReturn(option);
@@ -261,6 +263,43 @@ public class TicketManagerTest {
         System.out.println(test3);
         System.out.println(resolved);
         assertTrue("Resolved ticket not found in resolved ticket list", TicketUtil.sameOpenTicket(resolved, test3));
+        
+    }
+    
+    
+    @Test(timeout=3000)
+    public void e2eDeleteTicketByDescriptionUserCancels() throws Exception {
+        
+        Ticket test1 = new Ticket("Mouse missing", 3, "Cubicle 123", new Date());
+        Ticket test2 = new Ticket("Server down", 1, "Admin", new Date());
+        Ticket test3 = new Ticket("Lost mouse", 5, "User", new Date());
+        store.add(test1);
+        store.add(test2);
+        store.add(test3);
+        
+        int option = 0;
+        try {
+            Field searchByDescription = TicketUI.class.getDeclaredField("DELETE_BY_DESCRIPTION");
+            searchByDescription.setAccessible(true);
+            option = (int) searchByDescription.get(null);
+        } catch (NoSuchFieldException|IllegalAccessException|ClassCastException e) {
+            fail("Create a static DELETE_BY_TICKET_DESCRIPTION variable in TicketUI and use it to create and show the menu. " + e);
+        }
+        
+        mockStatic(InputUtils.class);
+        expect(InputUtils.intInput(anyString())).andReturn(option);
+        expect(InputUtils.stringInput(anyString())).andReturn("mouse");   // Search term
+        expect(InputUtils.intInput(anyString())).andReturn(-1);    // ticket 3
+        
+        expect(InputUtils.intInput(anyString())).andReturn(TicketUI.QUIT);
+        PowerMock.replay(InputUtils.class);
+        
+        TicketManager q3 = new TicketManager();
+        q3.manage();
+        
+        assertTrue("When deleting by description, user should be able to type -1 to not delete any Tickets.", TicketUtil.sameOpenTicket(test1, store.getTicketById(1)));
+        assertTrue("When deleting by description, user should be able to type -1 to not delete any Tickets.", TicketUtil.sameOpenTicket(test2, store.getTicketById(2)));
+        assertTrue("When deleting by description, user should be able to type -1 to not delete any Tickets.", TicketUtil.sameOpenTicket(test3, store.getTicketById(3)));
         
     }
     
@@ -317,5 +356,10 @@ public class TicketManagerTest {
         q3.manage();
     }
     
+    
+    @Test(timeout = 3000)
+    public void ticketManagerDoesNotUseInputUtilsOrSystemOutPrintln() {
+    
+    }
     
 }

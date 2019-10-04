@@ -75,7 +75,8 @@ Add a check to `TicketUI.getNewTicketInfo()` method, to ensure that the priority
 
 ### Problem 3: New menu options - Delete by Description, Search by Description
 
-Add two new options to the menu: **Delete by Description**, and **Search by Description**.  You'll need to add some more int constants; and modify the `configureMenuOptions` method; and modify the switch statement in `manage`.
+Add two new options to the menu: **Delete by Description**, and **Search by Description**. 
+ Create two new static constants called `DELETE_BY_DESCRIPTION` and `SEARCH_BY_DESCRIPTION`. You'll need to add some more int constants; and modify the `configureMenuOptions` method; and modify the switch statement in `manage`.
 
 
 ### Problem 4: Implement search by description
@@ -103,11 +104,16 @@ In your program, when a ticket is deleted, it has been resolved in some way. Eit
 
 Modify the program so you can save information about deleted tickets.
 
-Add two new fields (variables) to the Ticket class.
+Add two new private fields (variables) to the Ticket class.
 
 Another Date; `resolvedDate`, the date the ticket was closed.
 And, a String that documents why the ticket was closed – the fix or the resolution for the ticket. This String should be called `resolution`
 
+Add public get and set methods for the two new resolved, and resolvedDate, fields. 
+
+Modify the Ticket class toString method.  
+If the ticket has not be resolved, return the current String.  
+If the ticket has been resolved, the toString method should return a String containing the resolution, and date resolved.  
 
 ### Problem 6: Implement delete by ID
 

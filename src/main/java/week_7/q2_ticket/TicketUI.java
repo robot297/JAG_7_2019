@@ -48,7 +48,7 @@ public class TicketUI {
             int task = intInput("Enter your selection");
             
             // If the user's option is in the map's key set, it's a valid choice. Return it.
-            if (options.keySet().contains(task)) {
+            if (options.containsKey(task)) {
                 return task;
             }
             
@@ -64,7 +64,7 @@ public class TicketUI {
         String description = stringInput("Enter description of the problem: ");
         String reporter = stringInput("Who reported this problem? ");
         
-        // TODO Problem 2: ensure the priority is between 1 and 5
+        // TODO Problem 2: ensure the priority is between 1 and 5. Loop until user enters a valid priority.
         int priority = intInput("Enter priority of " + description);
         
         return new Ticket(description, priority, reporter, dateReported);

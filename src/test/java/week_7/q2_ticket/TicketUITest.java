@@ -8,6 +8,10 @@ import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 import test_utils.PrintUtils;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
+
+import static junit.framework.TestCase.fail;
 import static org.easymock.EasyMock.anyString;
 import static org.easymock.EasyMock.expect;
 import static org.junit.Assert.assertEquals;
@@ -89,8 +93,24 @@ public class TicketUITest {
         
         assertTrue("Ensure your menu has an option 'Search by description'. Use that exact text.", out.toLowerCase().contains("search by description"));
         assertTrue("Ensure your menu has an option 'Delete by description'. Use that exact text.", out.toLowerCase().contains("delete by description"));
+    
         
+        Class ui = TicketUI.class;
+        try {
+            Field dbd = ui.getDeclaredField("DELETE_BY_DESCRIPTION");
+            Field sbd = ui.getDeclaredField("SEARCH_BY_DESCRIPTION");
+            
+            assertTrue("Constants added should be static", Modifier.isStatic(dbd.getModifiers()));
+            assertTrue("Constants added should be static", Modifier.isStatic(sbd.getModifiers()));
+    
+            assertTrue("Constants added should be constants (final)", Modifier.isFinal(sbd.getModifiers()));
+            assertTrue("Constants added should be constants (final)", Modifier.isFinal(sbd.getModifiers()));
+            
+        } catch (NoSuchFieldException e) {
+            fail("Add two new constants with the same names given in the instructions. ");
+        }
     }
+    
     
 
 }
