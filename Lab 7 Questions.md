@@ -9,6 +9,8 @@ A place object will need three private fields:
  *  A String reason (a reason for visiting, for example, to go surfing)
  *  A Date created (when the Place object was created.
 
+Date object information, example: https://github.com/claraj/Java2545Examples/blob/master/src/main/java/week7_first_classes/DateObjects.java
+
 Create get and set methods for all three fields. Remember that
 IntelliJ can generate these methods for you.
 
