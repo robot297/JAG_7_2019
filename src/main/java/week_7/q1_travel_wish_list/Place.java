@@ -17,6 +17,8 @@ public class Place /* TODO make Place objects Comparable, so they can be sorted 
     *    reason: A String reason (a reason for visiting, for example, to go surfing)
     *    created: A Date created (when the Place object was created.
     *
+    * Date objects: https://github.com/claraj/Java2545Examples/blob/master/src/main/java/week7_first_classes/DateObjects.java
+    *
     * Create get and set methods for all three fields. These will have names like
     * getName, setName, getReason, setReason, getCreated, setCreated.
     * Remember that IntelliJ can generate these methods for you.
