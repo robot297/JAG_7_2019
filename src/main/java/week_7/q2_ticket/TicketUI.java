@@ -105,8 +105,8 @@ public class TicketUI {
     }
     
     
-    public void displayTicket(Ticket next) {
-        System.out.println(next);
+    public void displayTicket(Ticket ticket) {
+        System.out.println(ticket);
     }
     
 }
