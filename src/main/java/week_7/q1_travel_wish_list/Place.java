@@ -1,7 +1,5 @@
 package week_7.q1_travel_wish_list;
 
-import java.util.Date;
-
 /**
  * Represents one place in a wish list of places to travel to.
  */
@@ -10,7 +8,7 @@ public class Place /* TODO make Place objects Comparable, so they can be sorted 
     
     /*
     *
-    * TODO finish this class
+    * TODO finish this class.
     *
     * A place object will need three private fields, with these names:
     *    name: A String for the place name (for example, Hawaii)
@@ -53,12 +51,12 @@ public class Place /* TODO make Place objects Comparable, so they can be sorted 
     
     // TODO create the private fields
     
-    // TODO create public constructor with required arguments
+    // TODO create a public constructor with required arguments
     
-    // TODO create get and set methods
+    // TODO create get and set methods for the private fields
     
-    // TODO create toString method
+    // TODO create toString method that returns a human-readable String with all the information about a Place
     
-    // TODO create compareTo method
+    // TODO create compareTo method so that Place objects can be sorted.
     
 }
