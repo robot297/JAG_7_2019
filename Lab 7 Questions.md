@@ -115,7 +115,7 @@ Add public get and set methods for the two new resolved, and resolvedDate, field
 
 Modify the Ticket class toString method.  
 If the ticket has not be resolved, return the current String.  
-If the ticket has been resolved, the toString method should return a String containing the resolution, and date resolved.  
+If the ticket has been resolved, the toString method should return all the data in the current String, plus the resolution, and date resolved.  
 
 ### Problem 6: Implement delete by ID
 
