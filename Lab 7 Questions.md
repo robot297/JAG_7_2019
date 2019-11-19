@@ -89,14 +89,14 @@ The search should NOT be case sensitive.
 
 You should not modify the description when you save tickets. So, the approach of saving all descriptions in lowercase or uppercase is not an acceptable solution for this problem.
  
-Implement `TicketStore.searchByDescription` to search the list and return all matching tickets. 
+Finish TicketStore.java `searchByDescription` method to search the list and return all matching tickets. 
 
-If `TicketStore.searchByDescription` doesn't find any matches, return an empty list.
-If `TicketStore.searchByDescription` is called with an empty string, or a null string, it should return an empty list.
+If TicketStore.java  `searchByDescription` doesn't find any matches, return an empty list.
+If TicketStore.java `searchByDescription` is called with an empty string, or a null string, it should return an empty list.
 
 Implement Question_2_Support_Ticket_Manager.menuOptionSearchByDescription. 
 Use the `askUserQuestion` method in TicketUI to ask the user for the search String.
-Use `TicketStore.searchByDescription` to search for matching tickets
+Use `searchByDescription` method in TicketStore to search for matching tickets
 Use the `displayTickets` method in TicketUI to display all matching tickets. 
 
 
