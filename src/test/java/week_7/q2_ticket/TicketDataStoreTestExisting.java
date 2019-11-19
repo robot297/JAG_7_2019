@@ -86,7 +86,7 @@ public class TicketDataStoreTestExisting {
         store.add(testPr2); store.add(testPr4); store.add(testPr3);
         
         // Most severe should be returned
-        assertEquals("The most severe ticket should be returned on a call to peekNextTicket", TicketStore.getInstance().peekNextTicket(), testPr2);
+        assertEquals("The most severe ticket should be returned on a call to peekNextTicket", testPr2, TicketStore.getInstance().peekNextTicket());
         
     }
     
@@ -103,7 +103,7 @@ public class TicketDataStoreTestExisting {
         //Add these tickets
         store.add(testPr2); store.add(testPr4); store.add(testPr3);
         
-        assertEquals("After adding three tickets, there should be 3 tickets in the queue", store.ticketsInQueue(), 3);
+        assertEquals("After adding three tickets, there should be 3 tickets in the queue", 3, store.ticketsInQueue());
         
     }
     
