@@ -26,6 +26,18 @@ public class WishListTest {
         placeClass = Class.forName("week_7.q1_travel_wish_list.Place");
     }
     
+    public Constructor ensureCorrectConstructor() {
+        Constructor[] cons = placeClass.getConstructors();
+        assertEquals("Can't create Place objects. You must create one public constructor in the Place class.\n" +
+                "Make sure it's access modifier is public.", 1, cons.length);
+        Constructor c = cons[0];
+        assertArrayEquals("Can't create Place objects, wrong constructor.\n" +
+                        "Place constructor should take two String arguments for place name and reason to visit, in that order\n " +
+                        "Constructor should not have a Date argument.\n" +
+                        "The constructor will initialize the Date created to the current date/time.",
+                new Class[]{String.class, String.class}, c.getParameterTypes());
+        return c;
+    }
     
     @Test(timeout=3000)
     public void testPlaceClassFields() throws NoSuchFieldException{
@@ -43,68 +55,66 @@ public class WishListTest {
         Field createdField = placeClass.getDeclaredField("created");
         assertTrue(Modifier.isPrivate(nameField.getModifiers()));
         assertEquals("Place class should have a private Date created field", Date.class, createdField.getType());
-        
     }
     
     
     @Test(timeout=3000)
-    public void testPlaceClassGetAndSet() throws Exception{
-    
-        String[] methodsExpected = {"getName", "setName", "getReason", "setReason", "getCreated", "setCreated"};
+    public void testPlaceClassGetAndSet() throws Exception {
         
-        Method getName = placeClass.getMethod("getName");
-        assertEquals("Place class should have a public get and set method for the name field", String.class, getName.getReturnType());
+        try {
+            Method getName = placeClass.getMethod("getName");
+            assertEquals("Place class should have a public get and set method for the name field", String.class, getName.getReturnType());
+    
+            Method setName = placeClass.getMethod("setName", String.class);
+            assertEquals("Place class should have a public get and set method for the name field", Void.TYPE, setName.getReturnType());
+    
+            Method getReason = placeClass.getMethod("getReason");
+            assertEquals("Place class should have a public get and set method for the reason field", String.class, getReason.getReturnType());
+    
+            Method setReason = placeClass.getMethod("setReason", String.class);
+            assertEquals("Place class should have a public get and set method for the reason field", Void.TYPE, setReason.getReturnType());
+    
+            Method getCreated = placeClass.getMethod("getCreated");
+            assertEquals("Place class should have a public get and set method for the created field", Date.class, getCreated.getReturnType());
+    
+            Method setCreated = placeClass.getMethod("setCreated", Date.class);
+            assertEquals("Place class should have a public get and set method for the created field", Void.TYPE, setCreated.getReturnType());
+    
+            Method[] methods = {getName, getReason, getName, setName, setReason, setCreated};
+    
+            for (Method m : methods) {
+                assertTrue(m.getName() + "should be public.", Modifier.isPublic(m.getModifiers()));
+            }
+    
+            
+            Constructor c = ensureCorrectConstructor();
+            Place p = (Place) c.newInstance("example", "because");
+    
+            setName.invoke(p, "California");
+            String name = (String) getName.invoke(p);
+            assertEquals("Set method should set the name variable, get method should return it's value", name, "California");
+    
+            setReason.invoke(p, "Because");
+            String reason = (String) getReason.invoke(p);
+            assertEquals("Set method should set the reason variable, get method should return it's value", "Because", reason);
+    
+            Date now = new Date();
+            setCreated.invoke(p, now);
+            Date created = (Date) getCreated.invoke(p);
+            assertEquals("Set method should set the created variable, get method should return it's value", now, created);
         
-        Method setName = placeClass.getMethod("setName", String.class);
-        assertEquals("Place class should have a public get and set method for the name field", Void.TYPE, setName.getReturnType());
-    
-        Method getReason = placeClass.getMethod("getReason");
-        assertEquals("Place class should have a public get and set method for the reason field", String.class, getReason.getReturnType());
-        
-        Method setReason = placeClass.getMethod("setReason", String.class);
-        assertEquals("Place class should have a public get and set method for the reason field", Void.TYPE, setReason.getReturnType());
-    
-        Method getCreated = placeClass.getMethod("getCreated");
-        assertEquals("Place class should have a public get and set method for the created field", Date.class, getCreated.getReturnType());
-    
-        Method setCreated = placeClass.getMethod("setCreated", Date.class);
-        assertEquals("Place class should have a public get and set method for the created field", Void.TYPE, setCreated.getReturnType());
-    
-        Method[] methods = { getName, getReason, getName, setName, setReason, setCreated};
-        
-        for (Method m: methods) {
-            assertTrue(m.getName() + "should be public.", Modifier.isPublic(m.getModifiers()));
+        } catch (NoSuchMethodException nsme) {
+            System.out.println("Missing a method that is expected in the Place class. Make sure you have " +
+                    "\ncreated all the get and set methods required. Read the error message below for the missing method name.");
+            throw nsme;
         }
-        
-        Constructor[] cons = placeClass.getConstructors();
-        Place p = (Place) cons[0].newInstance("example", "because");
-        
-        setName.invoke(p, "California");
-        String name = (String) getName.invoke(p);
-        assertEquals("Set method should set the name variable, get method should return it's value", name, "California");
-        
-        setReason.invoke(p, "Because");
-        String reason = (String) getReason.invoke(p);
-        assertEquals("Set method should set the reason variable, get method should return it's value",  "Because", reason);
-    
-        Date now = new Date();
-        setCreated.invoke(p, now);
-        Date created = (Date) getCreated.invoke(p);
-        assertEquals("Set method should set the created variable, get method should return it's value",  now, created);
-        
     }
     
     @Test(timeout=3000)
     public void testPlaceClassConstructor() throws  Exception{
     
-        Constructor[] cons = placeClass.getConstructors();
-        assertEquals(1, cons.length);
-        Constructor c = cons[0];
-        assertArrayEquals("Place constructor should take two String arguments for place name and reason to visit, in that order\n " +
-                        "Constructor should create initialize the Date created to the current date/time.",
-                new Class[]{String.class, String.class}, c.getParameterTypes());
+        Constructor c = ensureCorrectConstructor();
         
-        Date now = new Date();
         Place p = (Place) c.newInstance("example", "because");
         
         Field name = placeClass.getDeclaredField("name");
@@ -129,14 +139,12 @@ public class WishListTest {
     public void placeIsComparable() throws Exception{
     
         Class comparable = Comparable.class;
-        assertTrue(comparable.isAssignableFrom(placeClass));
+        assertTrue("Make sure your Place class implements Comparable.", comparable.isAssignableFrom(placeClass));
     
         Method compare = placeClass.getMethod("compareTo", Place.class);
     
-        Constructor[] cons = placeClass.getConstructors();
-        assertEquals(1, cons.length);
-        Constructor c = cons[0];
-    
+        Constructor c = ensureCorrectConstructor();
+        
         Place firstPlace = (Place) c.newInstance("arizona", "because");
         Place secondPlace = (Place) c.newInstance("Rome", "why");
         Place thirdPlace =  (Place) c.newInstance("Zambia", "reason");
@@ -160,9 +168,7 @@ public class WishListTest {
     @Test(timeout=3000)
     public void testPlaceToString() throws Exception{
     
-        Constructor[] cons = placeClass.getConstructors();
-        assertEquals(1, cons.length);
-        Constructor c = cons[0];
+        Constructor c = ensureCorrectConstructor();
     
         Date now = new Date();
         
@@ -200,9 +206,7 @@ public class WishListTest {
     @Test(timeout=3000)
     public void displayPlacesInNameOrder() throws Exception {
     
-        Constructor[] cons = placeClass.getConstructors();
-        assertEquals(1, cons.length);
-        Constructor c = cons[0];
+        Constructor c = ensureCorrectConstructor();
         
         PrintUtils.catchStandardOut();
     
