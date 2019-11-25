@@ -130,7 +130,7 @@ public class WishListTest {
     
         assertEquals("Constructor should set the reason field.", "because", reason.get(p));
     
-        assertEquals("Constructor should create the data for the created field.", new Date().toString(), created.get(p).toString());
+        assertEquals("Constructor should create the date for the created field.", new Date().toString(), created.get(p).toString());
     }
     
     
