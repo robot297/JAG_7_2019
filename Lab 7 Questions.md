@@ -108,10 +108,10 @@ Modify the program so you can save information about deleted tickets.
 
 Add two new private fields (variables) to the Ticket class.
 
-Another Date; `resolvedDate`, the date the ticket was closed.
-And, a String that documents why the ticket was closed – the fix or the resolution for the ticket. This String should be called `resolution`
+Another Date field `dateResolved`, the date the ticket was closed.
+And, a String field called `resolution` that will store why the ticket was closed – the fix or the resolution for the ticket.
 
-Add public get and set methods for the two new resolved, and resolvedDate, fields. 
+Add public get and set methods for the two new fields. 
 
 Modify the Ticket class toString method.  
 If the ticket has not be resolved, return the current String.  

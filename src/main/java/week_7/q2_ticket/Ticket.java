@@ -10,7 +10,7 @@ public class Ticket {
     private Date dateReported;
     private int ticketID;     //The ID for each ticket - an instance variable. Each Ticket will have it's own ticketID variable
     
-    // TODO Problem 5: tickets need to store the resolution Date in a variable resolvedData
+    // TODO Problem 5: tickets need to store the resolution Date in a variable called dateResolved
     // TODO Problem 5: and a String describing the resolution
      
     public Ticket(String desc, int p, String rep, Date date) {
